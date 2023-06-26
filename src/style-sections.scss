@@ -1,0 +1,69 @@
+// Copyright (c) 2023 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Import Auro tokens
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
+
+
+
+// container styles - defines the look of the outer custom component
+:host {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--auro-color-text-primary-on-light);
+  vertical-align: middle;
+
+  .trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: var(--auro-size-200);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: var(--auro-border-radius);
+    transition: all 0.5s ease-in-out;
+    transition-property: padding-bottom;
+
+    &:hover {
+      background: var(--auro-color-ui-bkg-hover-on-light);
+     }
+
+    &:focus-visible {
+      border-color: var(--auro-color-ui-default-on-light);
+      background: none;
+    }
+  }
+
+  ::slotted(*){
+    display: block;
+  }
+
+  ::slotted(*:last-child) {
+    border-bottom: none;
+  }
+}
+
+// :host([expanded]) {
+//   .trigger {
+//     padding-bottom: 0;
+//   }
+// }
+
+.iconWrapper {
+  height: var(--auro-size-300);
+
+  svg {
+    width: var(--auro-size-300);
+    /* stylelint-disable-next-line declaration-no-important */
+    height: auto !important; // necc to override inline styling
+    margin-left: var(--auro-size-150) ;
+  }
+}

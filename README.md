@@ -21,15 +21,18 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
-`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis in tellus nec pellentesque. Integer bibendum ligula sit amet vehicula gravida. Maecenas accumsan, ligula vitae molestie iaculis, tellus mi laoreet ex [install instructions](https://auro.alaskaair.com/components/auro/button/install), ac malesuada velit dolor vel mi. Cras et rutrum urna. Sed mattis mi eu tortor ullamcorper, egestas bibendum mauris cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra eros eget neque commodo vulputate. In tempus eu velit at dictum.
-
-Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
+`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that provides users a way to create navigational interfaces on the lefthand
+side of a page to navigate to seperate pages or different sections within the same page.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./../docs/partials/readmeAddlInfo.md -->
-<!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
+When consuming the `auro-sidenav` you will be registering the `auro-sidenavitem` and `auro-sidenavsection` component as well as the `auro-sidenav` components to the DOM. These components will be necessary to create the navigation.
+
+The `auro-sidenavsection` is an extension of the `auro-accordion` can be used to create sections.
+
+The `auro-sidenavitem` is an extension of the `auro-hyperlink` and used to create the navigational links in the `auro-sidenav`. You can use the expected `href` and `target` attributes to properly enable and style the links.
+
+Please refer to the below example to see how to use these components.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## UI development browser support
@@ -45,7 +48,6 @@ For the most up to date information on [UI development browser support](https://
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-sidenav/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-sidenav/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-sidenav?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-sidenav)
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-sidenav?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/@aurodesignsystem/auro-sidenav?style=for-the-badge)](https://snyk.io/test/npm/@aurodesignsystem/auro-sidenav?tab=issues)
 
 ```shell
 $ npm i @aurodesignsystem/auro-sidenav
@@ -89,7 +91,12 @@ import "@aurodesignsystem/auro-sidenav";
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-sidenav>Hello World</auro-sidenav>
+<auro-sidenav>
+  <span slot="heading">Alaska Airlines History</span>
+  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+</auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -108,9 +115,9 @@ We recommend you load these bundles using [differential serving](https://philipw
 
 ```html
 <!-- **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/@aurodesignsystem/auro-sidenav@latest/dist/auro-sidenav__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-sidenav@latest/dist/auro-sidenav__bundled.js" type="module"></script>
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -121,9 +128,8 @@ We recommend you load these bundles using [differential serving](https://philipw
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
 The `<auro-sidenav>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
+* create in-page navigation for long content-heavy pages
+* provide navigation to related pages on a page
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Code Examples
@@ -134,7 +140,12 @@ The `<auro-sidenav>` element should be used in situations where users may:
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-sidenav>Hello World</auro-sidenav>
+<auro-sidenav>
+  <span slot="heading">Alaska Airlines History</span>
+  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+</auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 

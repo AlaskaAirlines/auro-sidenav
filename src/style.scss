@@ -10,26 +10,33 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
 
-// Support for auroElement styles
-// @import './node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
-
 // container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
-
-
-// Selector is for initial setup only
-// delete when building new custom element
-.testClass {
+:host {
   display: inline-block;
-  padding: var(--auro-text-body-size-default);
-  border: 1px solid var(--auro-color-border-error-on-light);
-  color:  var(--auro-color-border-error-on-light);
-}
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--auro-color-text-primary-on-light);
+  font-size: var(--auro-text-body-size-lg);
+  vertical-align: middle;
 
-// Selector for native :focus-visible support
-:focus-visible {
-  background-color: var(--auro-color-border-error-on-light);
-  color: var(--auro-color-base-white);
+  ::slotted(auro-sidenavitem){
+    display: block;
+    border-bottom: 1px solid var(--auro-color-border-divider-on-light);
+  }
+
+  ::slotted(auro-sidenavsection){
+    display: block;
+    border-bottom: 1px solid var(--auro-color-border-divider-on-light);
+  }
+
+  ::slotted([slot="heading"]) {
+    padding: 0 0 var(--auro-size-200) 0;
+    font-size: var(--auro-text-heading-600-size-breakpoint-lg);
+    font-weight: var(--auro-text-heading-600-weight);
+  }
+
+  ::slotted(*:last-child) {
+    padding-bottom: 0;
+  }
 }
