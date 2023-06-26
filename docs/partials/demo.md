@@ -16,52 +16,28 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 
 ## Additional Information
 
-> Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam fermentum libero ipsum, ac tempor sapien blandit in. Nam tincidunt non felis molestie varius.
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./readmeAddlInfo.md) -->
+<!-- AURO-GENERATED-CONTENT:END -->
 
-|convallis|tristique|nisl dignissim|eleifend|
-|---|---|---|---|
-|√|√|||
-|||√|√|
-
-Aenean at blandit lorem. Fusce imperdiet mi nec gravida maximus. Quisque nisl libero, condimentum in nisi a, imperdiet lacinia arcu.
-
-```javascript
-toggleDialog = (elName) => {
-  let dialog = document.querySelector(elName);
-  const html = document.querySelector('html');
-
-  html.style.overflow = 'hidden';
-  dialog.removeAttribute("open");
-  dialog.setAttribute("open", true);
-}
-
-toggleDialogClose = (elName) => {
-  let dialog = document.querySelector(elName);
-  const html = document.querySelector('html');
-
-  html.style.overflow = '';
-  dialog.removeAttribute("open");
-}
-```
-
-## Example(s)
+## Example
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/full.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-Having a closing statement about your example helps to really complete the thought with your reader.
-
 ## Recommended Use and Version Control
+
+<!-- TODO: Update this section with custom tagging strategy -->
+
 
 There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-sidenav` custom element is defined automatically.
 
@@ -75,14 +51,12 @@ registerComponent('custom-sidenav');
 This will create a new custom element that you can use in your HTML that will function identically to the `auro-sidenav` element.
 
 <div class="exampleWrapper">
-  <custom-header display="display">Salutations World!</custom-header>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
-  ```html
-  <custom-header display="display">Salutations World!</custom-header>
-  ```
-
-</auro-accordion>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->

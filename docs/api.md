@@ -1,15 +1,11 @@
 # auro-sidenav
 
-The auro-sidenav element provides users a way to ... (it would be great if you fill this out).
+The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
+side of a page to navigate to seperate pages or different sections within the same page.
 
-## Attributes
+## Slots
 
-| Attribute | Type      | Description                               |
-|-----------|-----------|-------------------------------------------|
-| `fixed`   | `Boolean` | Uses fixed pixel values for element shape |
-
-## Properties
-
-| Property   | Attribute  | Type     | Description                                      |
-|------------|------------|----------|--------------------------------------------------|
-| `cssClass` | `cssClass` | `String` | Applies designated CSS class to demo element - you want to delete me! |
+| Name      | Description                                      |
+|-----------|--------------------------------------------------|
+|           | Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections. |
+| `heading` | Defines what to use as the header of the sidenav |

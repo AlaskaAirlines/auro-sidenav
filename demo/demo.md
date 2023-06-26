@@ -8,11 +8,8 @@ This file is generated based on a template fetched from `./docs/partials/demo.md
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
 <!-- The below content is automatically added from ./description.md -->
-`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis in tellus nec pellentesque. Integer bibendum ligula sit amet vehicula gravida. Maecenas accumsan, ligula vitae molestie iaculis, tellus mi laoreet ex [install instructions](https://auro.alaskaair.com/components/auro/button/install), ac malesuada velit dolor vel mi. Cras et rutrum urna. Sed mattis mi eu tortor ullamcorper, egestas bibendum mauris cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra eros eget neque commodo vulputate. In tempus eu velit at dictum.
-
-Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
+`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that provides users a way to create navigational interfaces on the lefthand
+side of a page to navigate to seperate pages or different sections within the same page.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-sidenav use cases
@@ -21,63 +18,73 @@ Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
 <!-- The below content is automatically added from ./useCases.md -->
 The `<auro-sidenav>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
+* create in-page navigation for long content-heavy pages
+* provide navigation to related pages on a page
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Additional Information
 
-> Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam fermentum libero ipsum, ac tempor sapien blandit in. Nam tincidunt non felis molestie varius.
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./readmeAddlInfo.md) -->
+<!-- The below content is automatically added from ./readmeAddlInfo.md -->
+When consuming the `auro-sidenav` you will be registering the `auro-sidenavitem` and `auro-sidenavsection` component as well as the `auro-sidenav` components to the DOM. These components will be necessary to create the navigation.
 
-|convallis|tristique|nisl dignissim|eleifend|
-|---|---|---|---|
-|√|√|||
-|||√|√|
+The `auro-sidenavsection` is an extension of the `auro-accordion` can be used to create sections.
 
-Aenean at blandit lorem. Fusce imperdiet mi nec gravida maximus. Quisque nisl libero, condimentum in nisi a, imperdiet lacinia arcu.
+The `auro-sidenavitem` is an extension of the `auro-hyperlink` and used to create the navigational links in the `auro-sidenav`. You can use the expected `href` and `target` attributes to properly enable and style the links.
 
-```javascript
-toggleDialog = (elName) => {
-  let dialog = document.querySelector(elName);
-  const html = document.querySelector('html');
+Please refer to the below example to see how to use these components.
+<!-- AURO-GENERATED-CONTENT:END -->
 
-  html.style.overflow = 'hidden';
-  dialog.removeAttribute("open");
-  dialog.setAttribute("open", true);
-}
-
-toggleDialogClose = (elName) => {
-  let dialog = document.querySelector(elName);
-  const html = document.querySelector('html');
-
-  html.style.overflow = '';
-  dialog.removeAttribute("open");
-}
-```
-
-## Example(s)
+## Example
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
-  <auro-sidenav>Hello World</auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/full.html -->
+  <auro-sidenav>
+    <span slot="heading">Pet travel policies</span>
+    <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-hawaii">Traveling to Hawaii</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-international" target="_blank">International travel with pets</auro-sidenavitem>
+    <auro-sidenavsection>
+      <span slot="trigger">FAQ</span>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#safe-to-fly">Is it safe to fly with my pet?</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#certain-breeds-prohibited">Why are certain breeds prohibited from flying in the cargo compartment?</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#dog-info" target="_blank">Dogs</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#cat-info" target="_blank">Cats</auro-sidenavitem>
+    </auro-sidenavsection>
+  </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/full.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/full.html -->
 
 ```html
-<auro-sidenav>Hello World</auro-sidenav>
+<auro-sidenav>
+  <span slot="heading">Pet travel policies</span>
+  <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
+  <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
+  <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-hawaii">Traveling to Hawaii</auro-sidenavitem>
+  <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-international" target="_blank">International travel with pets</auro-sidenavitem>
+  <auro-sidenavsection>
+    <span slot="trigger">FAQ</span>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#safe-to-fly">Is it safe to fly with my pet?</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#certain-breeds-prohibited">Why are certain breeds prohibited from flying in the cargo compartment?</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#dog-info" target="_blank">Dogs</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#cat-info" target="_blank">Cats</auro-sidenavitem>
+  </auro-sidenavsection>
+</auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
-Having a closing statement about your example helps to really complete the thought with your reader.
 
 ## Recommended Use and Version Control
 
+<!-- TODO: Update this section with custom tagging strategy -->
 There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-sidenav` custom element is defined automatically.
 
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
@@ -90,12 +97,27 @@ registerComponent('custom-sidenav');
 This will create a new custom element that you can use in your HTML that will function identically to the `auro-sidenav` element.
 
 <div class="exampleWrapper">
-  <custom-header display="display">Salutations World!</custom-header>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <custom-sidenav>
+    <span slot="heading">Alaska Airlines History</span>
+    <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+  </custom-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-  ```html
-  <custom-header display="display">Salutations World!</custom-header>
-  ```
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
 
-</auro-accordion>
+```html
+<custom-sidenav>
+  <span slot="heading">Alaska Airlines History</span>
+  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+</custom-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->

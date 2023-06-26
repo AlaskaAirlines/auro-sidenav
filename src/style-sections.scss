@@ -10,6 +10,8 @@
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
 
+
+
 // container styles - defines the look of the outer custom component
 :host {
   display: inline-block;
@@ -17,27 +19,43 @@
   padding: 0;
   margin: 0;
   color: var(--auro-color-text-primary-on-light);
-  font-size: var(--auro-text-body-size-lg);
   vertical-align: middle;
 
-  ::slotted(auro-sidenavitem){
-    display: block;
-    border-bottom: 1px solid var(--auro-color-border-divider-on-light);
+  .trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: var(--auro-size-200);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+
+    &:hover {
+      background: var(--auro-color-ui-bkg-hover-on-light);
+     }
+
+    &:focus-visible {
+      border-color: var(--auro-color-ui-default-on-light);
+      border-radius: var(--auro-border-radius);
+    }
   }
 
-  ::slotted(auro-sidenavsection){
+  ::slotted(*){
     display: block;
-    border-bottom: 1px solid var(--auro-color-border-divider-on-light);
-  }
-
-  ::slotted([slot="heading"]) {
-    display: block;
-    padding: 0 0 var(--auro-size-200) 0;
-    font-size: var(--auro-text-heading-300-size);
-    font-weight: var(--auro-text-heading-300-weight);
   }
 
   ::slotted(*:last-child) {
-    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.iconWrapper {
+  height: var(--auro-size-300);
+
+  svg {
+    width: var(--auro-size-300);
+    /* stylelint-disable-next-line declaration-no-important */
+    height: auto !important; // necc to override inline styling
+    margin-left: var(--auro-size-150) ;
+    color: var(--auro-color-icon-primary-on-light);
   }
 }

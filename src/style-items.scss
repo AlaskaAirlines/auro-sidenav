@@ -1,0 +1,77 @@
+// Copyright (c) 2023 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Import Auro tokens
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties';
+
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/dist/core';
+
+svg {
+  top: -4px;
+  width: var(--auro-size-300);
+  /* stylelint-disable-next-line declaration-no-important */
+  height: var(--auro-size-300) !important; // !important necc. to override inline styling
+  color: var(--auro-color-icon-primary-on-light);
+}
+
+.hyperlink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--auro-color-text-primary-on-light);
+  font-size: var(--auro-text-body-size-lg);
+  line-height: var(--auro-text-body-height-lg);
+  text-decoration: none;
+
+  &:hover {
+    background: var(--auro-color-ui-bkg-hover-on-light);
+    color: var(--auro-color-text-primary-on-light); // necc to override default hyperlink styling
+  }
+
+  &:visited {
+    color: var(--auro-color-text-primary-on-light);
+  }
+
+  &:focus-visible {
+    border-color: var(--auro-color-ui-default-on-light);
+    border-radius: var(--auro-border-radius);
+    background: none;
+    color: var(--auro-color-text-primary-on-light);
+    outline: none;
+
+    &:hover {
+      background: var(--auro-color-ui-bkg-hover-on-light); // necc to override default hyperlink styling
+       /* stylelint-disable-next-line declaration-no-important */
+      color: var(--auro-color-text-primary-on-light) !important; // necc to override default hyperlink styling
+    }
+  }
+}
+
+:host([selected]) {
+  border-left: 3px solid var(--auro-color-ui-default-on-light);
+
+  .hyperlink {
+    color: var(--auro-color-text-link-on-light);
+  }
+}
+
+:host([tier="0"]) {
+  .hyperlink {
+    padding: var(--auro-size-200);
+  }
+}
+
+:host([tier="1"]) {
+  .hyperlink {
+    padding: var(--auro-size-100) var(--auro-size-200) var(--auro-size-100) var(--auro-size-500);
+    font-size: var(--auro-text-body-size-default);
+    line-height:var(--auro-text-body-height-default);
+  }
+}
