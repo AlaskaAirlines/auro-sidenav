@@ -21,9 +21,9 @@
 
 ### Attribute Examples
 
-#### "target" and "href"
+#### auro-sidenavitem
 
-Since `auro-sidenavitem` is an extension of `auro-hyperlink` you can use the `target` and `href` attributes to style and enable the items as you would expect.
+`auro-sidenavitem` is an [extension](https://lit.dev/docs/components/defining/) of `auro-hyperlink` [hyperlinkversion]. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) is therefore exposed through the `auro-sidenavitem`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
