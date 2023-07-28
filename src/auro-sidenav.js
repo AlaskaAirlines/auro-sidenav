@@ -114,6 +114,7 @@ export class AuroSidenav extends LitElement {
 
   /**
    * Initializes list of sidenavitems in the DOM. This must re-run whenever slotted items change.
+   * @private
    */
   initItems() {
     this.items = Array.from(this.querySelectorAll('auro-sidenavitem'));
