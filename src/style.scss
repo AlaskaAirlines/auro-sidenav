@@ -36,8 +36,4 @@
     font-size: var(--auro-text-heading-300-size);
     font-weight: var(--auro-text-heading-300-weight);
   }
-
-  ::slotted(*:last-child) {
-    padding-bottom: 0;
-  }
 }
