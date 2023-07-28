@@ -51,7 +51,7 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 #### auro-sidenavitem
 
-`auro-sidenavitem` is an [extension](https://lit.dev/docs/components/defining/) of `auro-hyperlink` [hyperlinkversion]. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) is therefore exposed through the `auro-sidenavitem`.
+`auro-sidenavitem` is an [extension](https://lit.dev/docs/components/defining/) of `auro-hyperlink`. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) is therefore exposed through the `auro-sidenavitem`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
