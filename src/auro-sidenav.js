@@ -52,6 +52,9 @@ export class AuroSidenav extends LitElement {
       for (const element of node.children) {
         if (element.tagName.includes('ITEM')) {
           element.setAttribute('tier', depth);
+          if (!element.hasAttribute('href')) {
+            element.setAttribute('role', 'button');
+          }
         } else if (element.tagName.includes('SECTION')) {
           element.setAttribute("chevron", true);
           element.setAttribute("fluid", true);
@@ -61,10 +64,77 @@ export class AuroSidenav extends LitElement {
     }
 
     handleSlotChangeHelper(this, 0);
+    this.initItems();
+  }
+
+
+  /**
+   * Used to update selected menu when navigating in-page content.
+   * @param {Event} event - Mousedown event.
+   * @private
+   */
+  handleMouseDown(event) {
+    const item = event.target;
+
+    if (item.tagName.toLowerCase() !== 'auro-sidenavitem') {
+      return;
+    }
+
+    if (item.hasAttribute('href')) {
+      return;
+    }
+
+    this.selectItem(item);
+  }
+
+
+  /**
+   * Manage Enter keyboard events.
+   * @private
+   * @param {Object} event - Event object from the browser.
+   */
+  handleKeyDown(event) {
+    const item = event.target;
+
+    // With Enter event, update selected item
+    switch (event.key) {
+      case "Enter":
+        if (item.tagName.toLowerCase() !== 'auro-sidenavitem') {
+          return;
+        }
+        if (item.hasAttribute('href')) {
+          return;
+        }
+        this.selectItem(item);
+        break;
+      default:
+        break;
+    }
+  }
+
+  /**
+   * Initializes list of sidenavitems in the DOM. This must re-run whenever slotted items change.
+   */
+  initItems() {
+    this.items = Array.from(this.querySelectorAll('auro-sidenavitem'));
+  }
+
+  /**
+   * Updates items so that only specified item is selected.
+   * @private
+   * @param {Object} selectedItem - Item to be selected.
+   */
+  selectItem(selectedItem) {
+    for (const item of this.items) {
+      item.removeAttribute('selected');
+    }
+    selectedItem.setAttribute('selected', "");
   }
 
   firstUpdated() {
     this.handleSlotChange();
+    this.addEventListener('keydown', this.handleKeyDown);
+    this.addEventListener('mousedown', this.handleMouseDown);
   }
 
   // function that renders the HTML and CSS into  the scope of the component

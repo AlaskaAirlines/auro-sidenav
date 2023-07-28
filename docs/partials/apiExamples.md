@@ -39,7 +39,7 @@
 
 #### selected
 
-The `auro-sidenav` element supports using the `selected` attribute on `auro-sidenavitems` to designate an item as active.
+The `auro-sidenav` element supports using the `selected` attribute on `auro-sidenavitem` to designate an item as active.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/selected.html) -->

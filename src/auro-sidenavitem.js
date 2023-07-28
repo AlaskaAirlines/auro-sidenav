@@ -17,7 +17,6 @@ export class AuroSideNavItem extends AuroHyperlink {
       styleCss
     ];
   }
-
 }
 
 // default internal definition

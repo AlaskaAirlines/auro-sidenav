@@ -6,12 +6,18 @@
 The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
 side of a page to navigate to seperate pages or different sections within the same page.
 
+## Methods
+
+| Method      | Type       | Description                                      |
+|-------------|------------|--------------------------------------------------|
+| [initItems](#initItems) | `(): void` | Initializes list of sidenavitems in the DOM. This must re-run whenever slotted items change. |
+
 ## Slots
 
 | Name      | Description                                      |
 |-----------|--------------------------------------------------|
 |           | Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections. |
-| [heading](#heading) | Defines what to use as the header of the sidenav |
+| [heading](#heading) | Defines what to use as the header of the sidenav. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -49,9 +55,9 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 ### Attribute Examples
 
-#### "target" and "href"
+#### auro-sidenavitem
 
-Since `auro-sidenavitem` is an extension of `auro-hyperlink` you can use the `target` and `href` attributes to style and enable the items as you would expect.
+`auro-sidenavitem` is an [extension](https://lit.dev/docs/components/defining/) of `auro-hyperlink` [hyperlinkversion]. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) is therefore exposed through the `auro-sidenavitem`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
@@ -84,17 +90,18 @@ Since `auro-sidenavitem` is an extension of `auro-hyperlink` you can use the `ta
 
 #### selected
 
-The `auro-sidenav` element supports using the `selected` attribute on `auro-sidenavitems` to designate an item as active.
+The `auro-sidenav` element supports using the `selected` attribute on `auro-sidenavitem` to designate an item as active.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/selected.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/selected.html -->
   <auro-sidenav>
-    <span slot="heading">Auro Components</span>
-    <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/menu">Menu</auro-sidenavitem>
-    <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/sidenav" selected>Sidenav</auro-sidenavitem>
-    <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/button">Button</auro-sidenavitem>
-    <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/badge">Badge</auro-sidenavitem>
+    <span slot="heading">Favorite In-Flight Meal</span>
+    <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
+    <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
+    <auro-sidenavitem>Northwest Deli Picnic Pack</auro-sidenavitem>
+    <auro-sidenavitem>Mediterranean Tapas Picnic Pack</auro-sidenavitem>
+    <auro-sidenavitem>Kid's Choice Picnic Pack</auro-sidenavitem>
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -105,11 +112,12 @@ The `auro-sidenav` element supports using the `selected` attribute on `auro-side
 
 ```html
 <auro-sidenav>
-  <span slot="heading">Auro Components</span>
-  <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/menu">Menu</auro-sidenavitem>
-  <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/sidenav" selected>Sidenav</auro-sidenavitem>
-  <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/button">Button</auro-sidenavitem>
-  <auro-sidenavitem href="https://auro.alaskaair.com/components/auro/badge">Badge</auro-sidenavitem>
+  <span slot="heading">Favorite In-Flight Meal</span>
+  <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
+  <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
+  <auro-sidenavitem>Northwest Deli Picnic Pack</auro-sidenavitem>
+  <auro-sidenavitem>Mediterranean Tapas Picnic Pack</auro-sidenavitem>
+  <auro-sidenavitem>Kid's Choice Picnic Pack</auro-sidenavitem>
 </auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

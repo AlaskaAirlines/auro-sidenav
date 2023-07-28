@@ -18,7 +18,7 @@ svg {
   color: var(--auro-color-icon-primary-on-light);
 }
 
-.hyperlink {
+%hyperlink-sytles {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,13 +26,16 @@ svg {
   border-style: solid;
   border-color: transparent;
   color: var(--auro-color-text-primary-on-light);
+  cursor: pointer;
   font-size: var(--auro-text-body-size-lg);
   line-height: var(--auro-text-body-height-lg);
-  text-decoration: none;
+  /* stylelint-disable-next-line declaration-no-important */
+  text-decoration: none !important; // necc to override default hyperlink styling
 
   &:hover {
     background: var(--auro-color-ui-bkg-hover-on-light);
-    color: var(--auro-color-text-primary-on-light); // necc to override default hyperlink styling
+    /* stylelint-disable-next-line declaration-no-important */
+    color: var(--auro-color-text-primary-on-light) !important; // necc to override default hyperlink styling
   }
 
   &:visited {
@@ -47,31 +50,68 @@ svg {
     outline: none;
 
     &:hover {
-      background: var(--auro-color-ui-bkg-hover-on-light); // necc to override default hyperlink styling
-       /* stylelint-disable-next-line declaration-no-important */
+      background: var(--auro-color-ui-bkg-hover-on-light);
+      /* stylelint-disable-next-line declaration-no-important */
       color: var(--auro-color-text-primary-on-light) !important; // necc to override default hyperlink styling
     }
   }
 }
 
-:host([selected]) {
-  border-left: 3px solid var(--auro-color-ui-default-on-light);
+:host {
+  border-left: 3px solid transparent;
 
   .hyperlink {
-    color: var(--auro-color-text-link-on-light);
+    @extend %hyperlink-sytles;
+  }
+}
+
+:host([role="button"]) {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .hyperlink--button { // necc to match auro-hyperlink class name
+    @extend %hyperlink-sytles;
   }
 }
 
 :host([tier="0"]) {
   .hyperlink {
     padding: var(--auro-size-200);
+    padding-left: calc(var(--auro-size-200) - 2px);
   }
 }
 
 :host([tier="1"]) {
   .hyperlink {
     padding: var(--auro-size-100) var(--auro-size-200) var(--auro-size-100) var(--auro-size-500);
+    padding-left: calc(var(--auro-size-500) - 2px);
     font-size: var(--auro-text-body-size-default);
     line-height:var(--auro-text-body-height-default);
   }
+}
+
+%selected-item-colors {
+  color: var(--auro-color-text-link-on-light);
+
+  &:hover {
+    /* stylelint-disable-next-line declaration-no-important */
+    color: var(--auro-color-text-link-on-light) !important; // necc to override default hyperlink styling
+  }
+
+  &:focus-visible {
+    color: var(--auro-color-text-link-on-light);
+
+    &:hover {
+      /* stylelint-disable-next-line declaration-no-important */
+      color: var(--auro-color-text-link-on-light) !important; // necc to override default hyperlink styling
+    }
+  }
+}
+
+:host([selected]) {
+  border-left-color: var(--auro-color-ui-default-on-light);
+  color: var(--auro-color-text-link-on-light);
+
+  .hyperlink {
+    @extend %selected-item-colors;
+  }
+
 }
