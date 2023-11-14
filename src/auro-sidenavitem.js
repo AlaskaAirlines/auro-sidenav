@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/dist/auro-hyperlink.js';
+import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/src/auro-hyperlink.js';
 
 import styleCss from './style-items-css.js';
 
