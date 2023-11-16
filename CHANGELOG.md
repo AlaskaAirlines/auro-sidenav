@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.0.0...v1.0.1) (2023-11-16)
+
+
+### Performance Improvements
+
+* **token:** update token per new theming [#6](https://github.com/AlaskaAirlines/auro-sidenav/issues/6) ([47c0c72](https://github.com/AlaskaAirlines/auro-sidenav/commit/47c0c724ae01f91c8876482330c506508a8a3e2a))
+
 # 1.0.0 (2023-08-01)
 
 
