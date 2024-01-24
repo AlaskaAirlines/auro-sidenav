@@ -119,7 +119,7 @@ The `auro-sidenav` element supports using the `selected` attribute on `auro-side
 
 ### Slot Examples
 
-#### <a name="heading"></a>`heading`<a href="#auro-sidenav" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
+#### <a name="heading"></a>`heading`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 The `heading` slot defines what to use as the header of the sidenav.
 
 <div class="exampleWrapper">
