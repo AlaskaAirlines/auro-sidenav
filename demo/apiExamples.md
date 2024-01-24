@@ -31,7 +31,7 @@ side of a page to navigate to seperate pages or different sections within the sa
       </auro-sidenav>
       <!-- AURO-GENERATED-CONTENT:END -->
     </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
@@ -65,7 +65,7 @@ side of a page to navigate to seperate pages or different sections within the sa
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/hyperlink.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/hyperlink.html -->
@@ -99,7 +99,7 @@ The `auro-sidenav` element supports using the `selected` attribute on `auro-side
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/selected.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/selected.html -->
@@ -133,7 +133,7 @@ The `heading` slot defines what to use as the header of the sidenav.
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/heading.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/heading.html -->
@@ -180,7 +180,7 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/sections.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/sections.html -->

@@ -57,7 +57,7 @@ Please refer to the below example to see how to use these components.
   </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/full.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/full.html -->
@@ -107,7 +107,7 @@ This will create a new custom element that you can use in your HTML that will fu
   </custom-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
 <!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
