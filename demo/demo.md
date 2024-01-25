@@ -35,7 +35,11 @@ The `auro-sidenavitem` is an extension of the `auro-hyperlink` and used to creat
 Please refer to the below example to see how to use these components.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Example
+## Examples
+
+#### Default
+
+The following example illustrates a common use case for the `sidenav` element that includes a navigation header, an accordion sub-nav action, as well as a link that will open to an external URL.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
@@ -82,42 +86,129 @@ Please refer to the below example to see how to use these components.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-## Recommended Use and Version Control
+#### auro-sidenavitem
 
-<!-- TODO: Update this section with custom tagging strategy -->
-There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-sidenav` custom element is defined automatically.
-
-To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
-
-```js
-import './node_modules/@aurodesignsystem/auro-sidenav';
-registerComponent('custom-sidenav');
-```
-
-This will create a new custom element that you can use in your HTML that will function identically to the `auro-sidenav` element.
+The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/components/defining/) of `<auro-hyperlink>` element. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) are therefore exposed through the `auro-sidenavitem`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
-  <custom-sidenav>
-    <span slot="heading">Alaska Airlines History</span>
-    <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
-    <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
-    <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
-  </custom-sidenav>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/hyperlink.html -->
+  <auro-sidenav>
+    <span slot="heading">Airlines</span>
+    <auro-sidenavitem href="/" target="_blank">Alaska Airlines</auro-sidenavitem>
+    <auro-sidenavitem href="https://www.aa.com/" target="_blank">American Airlines</auro-sidenavitem>
+    <auro-sidenavitem href="https://www.britishairways.com/" target="_blank">British Airways</auro-sidenavitem>
+    <auro-sidenavitem href="https://www.jal.co.jp/" target="_blank">Japan Airlines</auro-sidenavitem>
+  </auro-sidenav>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/hyperlink.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/hyperlink.html -->
 
 ```html
-<custom-sidenav>
-  <span slot="heading">Alaska Airlines History</span>
-  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
-  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
-  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
-</custom-sidenav>
+<auro-sidenav>
+  <span slot="heading">Airlines</span>
+  <auro-sidenavitem href="/" target="_blank">Alaska Airlines</auro-sidenavitem>
+  <auro-sidenavitem href="https://www.aa.com/" target="_blank">American Airlines</auro-sidenavitem>
+  <auro-sidenavitem href="https://www.britishairways.com/" target="_blank">British Airways</auro-sidenavitem>
+  <auro-sidenavitem href="https://www.jal.co.jp/" target="_blank">Japan Airlines</auro-sidenavitem>
+</auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### selected
+
+The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-sidenavitem>` element to designate an item as active.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/selected.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/selected.html -->
+  <auro-sidenav>
+    <span slot="heading">Favorite In-Flight Meal</span>
+    <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
+    <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
+    <auro-sidenavitem>Northwest Deli Picnic Pack</auro-sidenavitem>
+    <auro-sidenavitem>Mediterranean Tapas Picnic Pack</auro-sidenavitem>
+    <auro-sidenavitem>Kid's Choice Picnic Pack</auro-sidenavitem>
+  </auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/selected.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/selected.html -->
+
+```html
+<auro-sidenav>
+  <span slot="heading">Favorite In-Flight Meal</span>
+  <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
+  <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
+  <auro-sidenavitem>Northwest Deli Picnic Pack</auro-sidenavitem>
+  <auro-sidenavitem>Mediterranean Tapas Picnic Pack</auro-sidenavitem>
+  <auro-sidenavitem>Kid's Choice Picnic Pack</auro-sidenavitem>
+</auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Sections
+
+The `<auro-sidenav>` element uses `<auro-sidenavsection>` elements to create sections and layers in the navigation. The `<auro-sidenavsection>` element is an extension of the `<auro-accordion>` element, you will need to supply a `trigger` slot for its children as well as the `<auro-sidenavitem>` elements. The `<auro-sidenav>` element will automatically apply the `chevron` and `fluid` attributes to the `<auro-sidenavsection>` elements.
+
+The `<auro-sidenavitem>` elements will automatically be styled as tiered children in the `<auro-sidenav>` element.
+
+Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/components/auro/accordion/api) if you wish to use any of its additional atttributes or functionality.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/sections.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/sections.html -->
+  <auro-sidenav>
+    <span slot="heading">Helpful links</span>
+    <auro-sidenavsection>
+      <span slot="trigger">Reservations</span>
+      <auro-sidenavitem href="/content/travel-info/accessible-services/airport-accessibility">Is it safe to fly with my pet?</auro-sidenavitem>
+      <auro-sidenavitem href="/booking/reservation-lookup">Why are certain breeds prohibited from flying in the cargo compartment?</auro-sidenavitem>
+    </auro-sidenavsection>
+    <auro-sidenavsection>
+      <span slot="trigger">Hotels, cars, and rides</span>
+      <auro-sidenavitem target="_blank" href="https://www.alaskaair.com/hotels/user/reservations">Hotel reservations</auro-sidenavitem>
+      <auro-sidenavitem target="_blank" href="https://www.alaskaair.com/car-rental/manage">Car reservations</auro-sidenavitem>
+    </auro-sidenavsection>
+    <auro-sidenavsection>
+      <span slot="trigger">Animals</span>
+      <auro-sidenavitem href="/content/travel-info/pets">Booking pet travel</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa">Pet travel FAQ</auro-sidenavitem>
+    </auro-sidenavsection>
+  </auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/sections.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/sections.html -->
+
+```html
+<auro-sidenav>
+  <span slot="heading">Helpful links</span>
+  <auro-sidenavsection>
+    <span slot="trigger">Reservations</span>
+    <auro-sidenavitem href="/content/travel-info/accessible-services/airport-accessibility">Is it safe to fly with my pet?</auro-sidenavitem>
+    <auro-sidenavitem href="/booking/reservation-lookup">Why are certain breeds prohibited from flying in the cargo compartment?</auro-sidenavitem>
+  </auro-sidenavsection>
+  <auro-sidenavsection>
+    <span slot="trigger">Hotels, cars, and rides</span>
+    <auro-sidenavitem target="_blank" href="https://www.alaskaair.com/hotels/user/reservations">Hotel reservations</auro-sidenavitem>
+    <auro-sidenavitem target="_blank" href="https://www.alaskaair.com/car-rental/manage">Car reservations</auro-sidenavitem>
+  </auro-sidenavsection>
+  <auro-sidenavsection>
+    <span slot="trigger">Animals</span>
+    <auro-sidenavitem href="/content/travel-info/pets">Booking pet travel</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa">Pet travel FAQ</auro-sidenavitem>
+  </auro-sidenavsection>
+</auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
