@@ -1,4 +1,4 @@
-import { AuroSidenav } from './src/auro-sidenav';
+import { AuroSidenav } from './src/auro-sidenav.js';
 
 /**
  * Register Custom Element.
