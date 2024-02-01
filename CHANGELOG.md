@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.0.2...v1.1.0) (2024-02-01)
+
+
+### Features
+
+* **ssr:** implement support for SSR projects [#8](https://github.com/AlaskaAirlines/auro-sidenav/issues/8) ([7b7cf61](https://github.com/AlaskaAirlines/auro-sidenav/commit/7b7cf61f1648b94d53a51c5756028bdcb4e14f44))
+
+
+### Performance Improvements
+
+* **accordion:** use new version of accordion ([18bf30c](https://github.com/AlaskaAirlines/auro-sidenav/commit/18bf30cde7a7fce8967e8989c8e22f5312da6443))
+* **deps:** update dependencies ([3fbcc62](https://github.com/AlaskaAirlines/auro-sidenav/commit/3fbcc628bda9772d18804a484ef674c0ee9c5631))
+* update deps and resource configs ([2b61e36](https://github.com/AlaskaAirlines/auro-sidenav/commit/2b61e36c751543d95c36f1b3dbea21dc7873db9b))
+* update index file name extension ([922892a](https://github.com/AlaskaAirlines/auro-sidenav/commit/922892a5017b6cb5f0dd0e26e26c97a8709ec876))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.0.1...v1.0.2) (2024-01-31)
 
 
