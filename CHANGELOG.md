@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [1.1.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.0...v1.1.1) (2024-02-13)
+
+
+### Bug Fixes
+
+* update component reference ([6cfaafe](https://github.com/AlaskaAirlines/auro-sidenav/commit/6cfaafe4cbf48e21426b3e6320d62d56ef83e38e))
+
+
+### Performance Improvements
+
+* update to support ESM ([d0d6dac](https://github.com/AlaskaAirlines/auro-sidenav/commit/d0d6dacf9d6fd10225ef5798d7ae43a3769f73e4))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.0.2...v1.1.0) (2024-02-01)
 
 
