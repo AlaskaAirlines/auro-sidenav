@@ -12,8 +12,8 @@ import { LitElement, html } from "lit";
 // import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 
 // Register dependent components
-import './auro-sidenavsection';
-import './auro-sidenavitem';
+import './auro-sidenavsection.js';
+import './auro-sidenavitem.js';
 
 // Import touch detection lib
 import styleCss from "./style-css.js";
