@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [1.1.4](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.3...v1.1.4) (2024-02-15)
+
+
+### Performance Improvements
+
+* **demo:** update demo file names ([dd7b597](https://github.com/AlaskaAirlines/auro-sidenav/commit/dd7b597c34e7fe035d9251149b07175848f9d522))
+* **deps:** update dependencies ([7969767](https://github.com/AlaskaAirlines/auro-sidenav/commit/79697670dca66c2d96496153a58c854c48a5d62b))
+
 ## [1.1.3](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.2...v1.1.3) (2024-02-13)
 
 
