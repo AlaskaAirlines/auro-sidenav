@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.5](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.4...v1.1.5) (2024-02-16)
+
+
+### Performance Improvements
+
+* update deps and hyperlink ref ([f8af136](https://github.com/AlaskaAirlines/auro-sidenav/commit/f8af136ca7dc34e7c34556ea16a108dae63f0549))
+
 ## [1.1.4](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.3...v1.1.4) (2024-02-15)
 
 
