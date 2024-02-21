@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [1.1.6](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.5...v1.1.6) (2024-02-21)
+
+
+### Bug Fixes
+
+* **registration:** make custom registration rename all component parts ([ff6b88a](https://github.com/AlaskaAirlines/auro-sidenav/commit/ff6b88a4fd09dd08311719cfadf08a14f28fb158))
+* **styles:** make styles work with custom tag names ([b42cb93](https://github.com/AlaskaAirlines/auro-sidenav/commit/b42cb9337d7058608757a2a52782c42b5e09be28))
+
+
+### Performance Improvements
+
+* **deps:** update to latest dependency versions ([7b425ff](https://github.com/AlaskaAirlines/auro-sidenav/commit/7b425ffa4810d43352e44223bccee8e179fbf97a))
+
 ## [1.1.5](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.4...v1.1.5) (2024-02-16)
 
 
