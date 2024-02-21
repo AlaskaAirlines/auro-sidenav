@@ -8,8 +8,8 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
 <!-- The below content is automatically added from ./description.md -->
-`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that provides users a way to create navigational interfaces on the lefthand
-side of a page to navigate to seperate pages or different sections within the same page.
+`<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that provides users a way to create navigational interfaces on the left hand
+side of a page to navigate to separate pages or different sections within the same page.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-sidenav use cases
@@ -209,6 +209,48 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa">Pet travel FAQ</auro-sidenavitem>
   </auro-sidenavsection>
 </auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Recommended Use and Version Control
+
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `<auro-sidenav>` custom element is defined automatically.
+
+To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
+
+```js
+import './node_modules/@aurodesignsystem/auro-sidenav';
+registerComponent('custom-sidenav');
+```
+
+This will create a new custom element that you can use in your HTML that will function identically to the `<auro-sidenav>` element.
+
+Using the `registerComponent` function to create a custom `<auro-sidenav>` will also create a custom `<auro-sidenavitem>` and `<auro-sidenavsection>` with the exact same naming convention. For example, using `registerComponent('custom-sidenav')` will result in `<custom-sidenavitem>` and `<custom-sidenavsection>` also being created.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <custom-sidenav>
+    <span slot="heading">Alaska Airlines History</span>
+    <custom-sidenavitem href="/content/about-us/history">Historical overview</custom-sidenavitem>
+    <custom-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</custom-sidenavitem>
+    <custom-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</custom-sidenavitem>
+  </custom-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+
+```html
+<custom-sidenav>
+  <span slot="heading">Alaska Airlines History</span>
+  <custom-sidenavitem href="/content/about-us/history">Historical overview</custom-sidenavitem>
+  <custom-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</custom-sidenavitem>
+  <custom-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</custom-sidenavitem>
+</custom-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
