@@ -58,6 +58,8 @@ svg {
 }
 
 :host {
+  display: block;
+  border-bottom: 1px solid var(--ds-color-border-divider-default, $ds-color-border-divider-default);
   border-left: 3px solid transparent;
 
   .hyperlink {
