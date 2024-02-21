@@ -14,12 +14,12 @@
 
 // container styles - defines the look of the outer custom component
 :host {
-  display: inline-block;
+  display: block;
   width: 100%;
   padding: 0;
+  border-bottom: 1px solid var(--ds-color-border-divider-default, $ds-color-border-divider-default);
   margin: 0;
   color: var(--ds-color-text-primary-default, $ds-color-text-primary-default);
-  vertical-align: middle;
 
   .trigger {
     width: 100%;
