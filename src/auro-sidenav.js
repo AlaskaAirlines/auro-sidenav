@@ -10,6 +10,7 @@ import { LitElement, html } from "lit";
 // See instructions for importing auroElement base class https://git.io/JULq4
 // import { LitElement, html } from "lit";
 // import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
+import "@aurodesignsystem/auro-accordion";
 
 // Register dependent components
 import './auro-sidenavsection.js';
@@ -141,8 +142,10 @@ export class AuroSidenav extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      <span><slot name="heading"></slot></span>
-      <slot @slotchange="{this.handleSlotChange}"></slot>
+      <auro-accordion>
+        <span slot="trigger"><slot name="heading"></slot></span>
+        <slot @slotchange="{this.handleSlotChange}"></slot>
+      </auro-accoridon>
     `;
   }
 }
