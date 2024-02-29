@@ -17,20 +17,43 @@ import './auro-sidenavsection.js';
 import './auro-sidenavitem.js';
 
 // Import touch detection lib
+import { ifDefined } from 'lit/directives/if-defined.js';
 import styleCss from "./style-css.js";
+
+const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-sm';
+
+/**
+ * This FALLBACK value was retrieved from the auro design tokens as of Thursday, Feb. 9 2024.
+ * NOTE: As this is a _fallback_ value, it is only ever used if the DESIGN_TOKEN_VARIABLE is unable to be retrieved.
+ *
+ * @type {number}
+ */
+const FALLBACK_MOBILE_BREAKPOINT = 576;
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
- * side of a page to navigate to seperate pages or different sections within the same page.
+ * side of a page to navigate to separate pages or different sections within the same page.
  * @slot heading - Defines what to use as the header of the sidenav.
  * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
  */
 
 // build the component class
 export class AuroSidenav extends LitElement {
+  constructor() {
+    super();
+
+    this.breakpoint = this.getSmallBreakpoint();
+    this.windowWidth = window.innerWidth;
+
+    this.handleWindowResize = this.handleWindowResize.bind(this);
+  }
 
   static get properties() {
-    return {};
+    return {
+      windowWidth: {
+        type: Number,
+      },
+    };
   }
 
   static get styles() {
@@ -139,14 +162,55 @@ export class AuroSidenav extends LitElement {
     this.addEventListener('mousedown', this.handleMouseDown);
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener('resize', this.handleWindowResize);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('resize', this.handleWindowResize);
+  }
+
+  /**
+   * @private
+   */
+  handleWindowResize() {
+    // eslint-disable-next-line no-underscore-dangle
+    this.windowWidth = window.innerWidth;
+  }
+
+  getSmallBreakpoint() {
+    const smallBreakpointVar = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE);
+
+    return smallBreakpointVar.includes("px")
+      ? Number(smallBreakpointVar.replace('px', ''))
+      // See top of file for explanation of this fallback value.
+      : FALLBACK_MOBILE_BREAKPOINT;
+  }
+
+  isSmallBreakpoint() {
+    return this.windowWidth <= this.getSmallBreakpoint();
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
-      <auro-accordion>
-        <span slot="trigger"><slot name="heading"></slot></span>
-        <slot @slotchange="{this.handleSlotChange}"></slot>
-      </auro-accoridon>
+    const sidenavContent = html`
+      <span slot="${ifDefined(this.isSmallBreakpoint(this.breakpoint) ? 'trigger' : undefined)}">
+        <slot name="heading"></slot>
+      </span>
+      <slot @slotchange="{this.handleSlotChange}"></slot>
     `;
+
+    return this.isSmallBreakpoint(this.breakpoint)
+      ? html`
+        <auro-accordion>
+          ${sidenavContent}
+        </auro-accoridon>
+      `
+      : html`
+        sidenavContent
+      `;
   }
 }
 
