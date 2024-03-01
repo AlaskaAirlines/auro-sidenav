@@ -13,13 +13,13 @@ import { LitElement, html } from "lit";
 import "@aurodesignsystem/auro-accordion";
 
 // Register dependent components
-import './auro-sidenavsection.js';
 import './auro-sidenavitem.js';
+import './auro-sidenavsection.js';
 
 // Import touch detection lib
 import { ifDefined } from 'lit/directives/if-defined.js';
-import throttle from './utils/throttle.js';
 import styleCss from "./style-css.js";
+import throttle from './utils/throttle.js';
 
 const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-sm';
 
@@ -36,6 +36,12 @@ const FALLBACK_MOBILE_BREAKPOINT = 576;
  * side of a page to navigate to separate pages or different sections within the same page.
  * @slot heading - Defines what to use as the header of the sidenav.
  * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
+ * @attr {String} alignRight - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#alignRight).
+ * @attr {String} chevron - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#chevron).
+ * @attr {String} emphasis - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#emphasis).
+ * @attr {String}  expanded - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#expanded).
+ * @attr {String} grouped - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#grouped).
+ * @attr {String} variant - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#variant).
  */
 
 // build the component class
@@ -53,6 +59,33 @@ export class AuroSidenav extends LitElement {
     return {
       windowWidth: {
         type: Number,
+        state: true
+      },
+      // eslint-disable-next-line no-warning-comments
+      // TODO: Do we need to pass all of these attributes to the accordion?
+      alignRight: {
+        type: String,
+        reflect: true,
+      },
+      chevron: {
+        type: String,
+        reflect: true,
+      },
+      emphasis: {
+        type: String,
+        reflect: true,
+      },
+      expanded: {
+        type: String,
+        reflect: true,
+      },
+      grouped: {
+        type: String,
+        reflect: true,
+      },
+      variant: {
+        type: String,
+        reflect: true,
       },
     };
   }
@@ -212,15 +245,20 @@ export class AuroSidenav extends LitElement {
       <slot @slotchange="{this.handleSlotChange}"></slot>
     `;
 
-    return this.isSmallBreakpoint(this.breakpoint)
+    return html`${this.isSmallBreakpoint(this.breakpoint)
       ? html`
-        <auro-accordion>
+        <auro-accordion
+          alignRight="${ifDefined(this.alignRight ? this.alignRight : undefined)}"
+          chevron="${ifDefined(this.chevron ? this.chevron : undefined)}"
+          emphasis="${ifDefined(this.emphasis ? this.emphasis : undefined)}"
+          expanded="${ifDefined(this.expanded ? this.expanded : undefined)}"
+          grouped="${ifDefined(this.grouped ? this.grouped : undefined)}"
+          variant="${ifDefined(this.variant ? this.variant : undefined)}"
+        >
           ${sidenavContent}
-        </auro-accoridon>
-      `
-      : html`
-        sidenavContent
-      `;
+          </auro-accoridon>`
+      : sidenavContent
+    }`;
   }
 }
 
