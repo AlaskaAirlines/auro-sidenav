@@ -18,6 +18,7 @@ import './auro-sidenavitem.js';
 
 // Import touch detection lib
 import { ifDefined } from 'lit/directives/if-defined.js';
+import throttle from './utils/throttle.js';
 import styleCss from "./style-css.js";
 
 const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-sm';
@@ -176,8 +177,17 @@ export class AuroSidenav extends LitElement {
    * @private
    */
   handleWindowResize() {
-    // eslint-disable-next-line no-underscore-dangle
-    this.windowWidth = window.innerWidth;
+    const throttleDelay = 500;
+    // eslint-disable-next-line no-warning-comments
+    // TODO: Do we want to keep a throttle fn? Do we have a util or lib that we already use for this sort of thing?
+    const throttled = throttle(
+      () => {
+        this.windowWidth = window.innerWidth;
+      },
+      throttleDelay
+    );
+
+    throttled();
   }
 
   getSmallBreakpoint() {
