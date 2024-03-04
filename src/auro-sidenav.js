@@ -10,14 +10,14 @@ import { LitElement, html } from "lit";
 // See instructions for importing auroElement base class https://git.io/JULq4
 // import { LitElement, html } from "lit";
 // import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
-import "@aurodesignsystem/auro-accordion";
+// import "@aurodesignsystem/auro-accordion";
+import "@aurodesignsystem/auro-button";
 
 // Register dependent components
 import './auro-sidenavitem.js';
 import './auro-sidenavsection.js';
 
 // Import touch detection lib
-import { ifDefined } from 'lit/directives/if-defined.js';
 import styleCss from "./style-css.js";
 
 /**
@@ -25,7 +25,7 @@ import styleCss from "./style-css.js";
  * side of a page to navigate to separate pages or different sections within the same page.
  * @slot heading - Defines what to use as the header of the sidenav.
  * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
- * @attr {String} alignRight - Sets role attribute on the [auro-accordion](https://auro.alaskaair.com/components/auro/accordion/api#alignRight).
+ * @attr {String} mobileBreakpoint - TODO/FIXME.
  */
 
 // build the component class
@@ -36,6 +36,10 @@ export class AuroSidenav extends LitElement {
       windowWidth: {
         type: Number,
         state: true
+      },
+      mobileBreakpoint: {
+        type: String,
+        reflect: true,
       },
     };
   }
@@ -141,21 +145,30 @@ export class AuroSidenav extends LitElement {
   }
 
   firstUpdated() {
+    this.accordion = this.shadowRoot.querySelector('auro-accordion');
+    this.accordion.toggleAccordion();
     this.handleSlotChange();
     this.addEventListener('keydown', this.handleKeyDown);
     this.addEventListener('mousedown', this.handleMouseDown);
   }
 
+  toggleAccordion() {
+    this.accordion.toggle();
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+    // mobileBreakpoint
     return html`
-      <auro-accordion>
-        <span slot="${ifDefined(this.isSmallBreakpoint(this.breakpoint) ? 'trigger' : undefined)}">
-          <slot name="desktopHeading"></slot>
-          <slot name="mobileHeading"></slot>
-        </span>
+      <auro-button @click="${() => this.toggleAccordion()}"></auro-button>
+      <auro-accordion manual>
+        <div slot="trigger">
+          <!-- Different slots as duplicate slots are not respected -->
+          <slot name="heading" class="desktopHeading"></slot>
+          <slot name="mobileHeading" class="mobileHeading" @click="${() => this.toggleAccordion()}"></slot>
+        </div>
         <slot @slotchange="{this.handleSlotChange}"></slot>
-      </auro-accoridon>`;
+        </auro-accoridon>`;
   }
 }
 

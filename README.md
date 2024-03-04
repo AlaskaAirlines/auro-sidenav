@@ -92,7 +92,7 @@ import "@aurodesignsystem/auro-sidenav";
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav mobileBreakpoint="sm">
   <span slot="heading">Alaska Airlines History</span>
   <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
@@ -140,7 +140,7 @@ The `<auro-sidenav>` element should be used in situations where users may:
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav mobileBreakpoint="sm">
   <span slot="heading">Alaska Airlines History</span>
   <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
