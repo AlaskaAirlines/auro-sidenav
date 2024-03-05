@@ -27,11 +27,11 @@
   }
 
   // Default show/hide setting(s) for mobile
-  ::slotted([slot="heading"]) {
+  .desktopHeading {
     display: none;
   }
 
-  ::slotted([slot="mobileHeading"]) {
+  .mobileHeading {
     display: block;
   }
 }
@@ -41,11 +41,11 @@
     display: none;
   }
 
-  ::slotted([slot="heading"]) {
+  .desktopHeading {
     display: block;
   }
 
-  ::slotted([slot="mobileHeading"]) {
+  .mobileHeading {
     display: none;
   }
 }

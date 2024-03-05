@@ -49,6 +49,22 @@ export class AuroSidenav extends LitElement {
   }
 
   /**
+   * A workaround to surface one header slot using the least amount of JavaScript we can.
+   * @private
+   */
+  cloneHeaderSlot() {
+    const headingSlot = this.shadowRoot.querySelector('#desktopHeading');
+    const mobileHeadingSlot = this.shadowRoot.querySelector('#desktopHeading').cloneNode(true);
+
+    mobileHeadingSlot.classList.replace("desktopHeading", "mobileHeading");
+    mobileHeadingSlot.setAttribute("name", "mobileHeading");
+    mobileHeadingSlot.addEventListener("click", () => this.toggleAccordion());
+
+    mobileHeadingSlot.innerHTML = headingSlot.assignedElements()[0].innerHTML;
+    this.trigger.append(mobileHeadingSlot);
+  }
+
+  /**
    * Used to update sidenavitem tiers on construction and @slotchange event.
    * @private
    */
@@ -146,7 +162,9 @@ export class AuroSidenav extends LitElement {
 
   firstUpdated() {
     this.accordion = this.shadowRoot.querySelector('auro-accordion');
-    this.accordion.toggleAccordion();
+    this.trigger = this.shadowRoot.querySelector('#trigger');
+
+    this.cloneHeaderSlot();
     this.handleSlotChange();
     this.addEventListener('keydown', this.handleKeyDown);
     this.addEventListener('mousedown', this.handleMouseDown);
@@ -156,19 +174,21 @@ export class AuroSidenav extends LitElement {
     this.accordion.toggle();
   }
 
+
+  // <slot name="mobileHeading" class="mobileHeading" @click=>${this.headingNodeText}</slot>
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    // mobileBreakpoint
+
     return html`
       <auro-button @click="${() => this.toggleAccordion()}"></auro-button>
       <auro-accordion manual>
-        <div slot="trigger">
+        <div slot="trigger" id="trigger">
           <!-- Different slots as duplicate slots are not respected -->
-          <slot name="heading" class="desktopHeading"></slot>
-          <slot name="mobileHeading" class="mobileHeading" @click="${() => this.toggleAccordion()}"></slot>
+          <slot name="heading" class="desktopHeading" id="desktopHeading"></slot>
         </div>
         <slot @slotchange="{this.handleSlotChange}"></slot>
-        </auro-accoridon>`;
+      </auro-accoridon>`;
   }
 }
 

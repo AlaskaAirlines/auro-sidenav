@@ -46,7 +46,6 @@ The following example illustrates a common use case for the `sidenav` element th
   <!-- The below content is automatically added from ./../../apiExamples/full.html -->
   <auro-sidenav mobileBreakpoint="sm">
     <span slot="heading">Pet travel policies</span>
-    <span slot="mobileHeading">MOBILE HEADING Pet travel policies</span>
     <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
@@ -70,7 +69,6 @@ The following example illustrates a common use case for the `sidenav` element th
 ```html
 <auro-sidenav mobileBreakpoint="sm">
   <span slot="heading">Pet travel policies</span>
-  <span slot="mobileHeading">MOBILE HEADING Pet travel policies</span>
   <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
   <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
