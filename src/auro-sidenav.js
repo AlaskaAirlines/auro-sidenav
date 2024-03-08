@@ -11,6 +11,8 @@ import { LitElement, html } from "lit";
 // import { LitElement, html } from "lit";
 // import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 
+import "@aurodesignsystem/auro-accordion";
+
 // Register dependent components
 import './auro-sidenavsection.js';
 import './auro-sidenavitem.js';
@@ -27,9 +29,19 @@ import styleCss from "./style-css.js";
 
 // build the component class
 export class AuroSidenav extends LitElement {
-
   static get properties() {
-    return {};
+    return {
+      static: {
+        type: Boolean,
+        reflect: true
+      }
+    };
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.setAttribute("role", "navigation");
+    this.setAttribute("aria-label", "Main");
   }
 
   static get styles() {
@@ -138,12 +150,52 @@ export class AuroSidenav extends LitElement {
     this.addEventListener('mousedown', this.handleMouseDown);
   }
 
+  async updated(changedProperties) {
+    super.updated(changedProperties);
+    await this.updateComplete;
+
+    if (!this.static) {
+      const sidenavMobileAccordion = this.shadowRoot.getElementById("accordion");
+      if (sidenavMobileAccordion) {
+        // #accordionContent is the farthest down we can drill in the DOM to still catch all nested accordion events
+        const sidenavMobileAccordionContent = sidenavMobileAccordion.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
+
+        // Catch all nested accordion expansion events
+        sidenavMobileAccordionContent.addEventListener("toggleExpanded", (event) => {
+          const nestedAccordionElement = event.target;
+          const nestedAccordionContent = nestedAccordionElement.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
+
+          // Set height to auto to allow expansion/contraction
+          sidenavMobileAccordionContent.style.height = "auto";
+
+          const onTransitionEnd = () => {
+            // Transition is over, now update sidenav "root" accordion with correct height
+            sidenavMobileAccordion.handleContentSlotChanges();
+            // Make listener clean itself up
+            nestedAccordionContent.removeEventListener("transitionend", onTransitionEnd);
+          };
+
+          nestedAccordionContent.addEventListener("transitionend", onTransitionEnd);
+        });
+      }
+    }
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
+    const sidebarContent = html`
       <span><slot name="heading"></slot></span>
       <slot @slotchange="{this.handleSlotChange}"></slot>
     `;
+    const sidebarContentCollapsable = html`
+      <auro-accordion id="accordion" part="accordion-root" chevron="none">
+        <span slot="trigger"><slot name="heading"></slot></span>
+        <!-- Listen for inner accordions -->
+        <slot @slotchange="${this.handleSlotChange}"></slot>
+      </auro-accordion>
+    `;
+
+    return html`${this.static ? sidebarContent : sidebarContentCollapsable}`;
   }
 }
 

@@ -54,7 +54,7 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 
 </auro-accordion>
 
-#### selected
+#### Selected
 
 The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-sidenavitem>` element to designate an item as active.
 
@@ -86,6 +86,24 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/sections.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Collapsible
+
+The `<auro-sidenav>` element uses the attribute `isToggle` to toggle accordion functionality. This can be both static
+and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design
+token.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/isToggle.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/isToggle.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
