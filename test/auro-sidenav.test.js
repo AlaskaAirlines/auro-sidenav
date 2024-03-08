@@ -79,4 +79,22 @@ describe('auro-sidenav', () => {
     expect(linkTwo).not.to.have.attr('selected');
     expect(linkThree).to.have.attr('selected');
   });
+
+  it('renders collapsible sidebar when collapsible property is true', async () => {
+    const el = await fixture(html`
+      <auro-sidenav collapsible></auro-sidenav>
+    `);
+
+    // Check if the collapsible sidebar content is rendered
+    expect(el.shadowRoot.querySelector('auro-accordion')).to.not.be.null;
+  });
+
+  it('renders non-collapsible sidebar when collapsible property is false', async () => {
+    const el = await fixture(html`
+      <auro-sidenav></auro-sidenav>
+    `);
+
+    // Check if the non-collapsible sidebar content is rendered
+    expect(el.shadowRoot.querySelector('auro-accordion')).to.be.null;
+  });
 });
