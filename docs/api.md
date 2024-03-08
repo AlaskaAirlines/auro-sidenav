@@ -5,9 +5,9 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 ## Properties
 
-| Property   | Attribute  | Type      |
-|------------|------------|-----------|
-| `isStatic` | `isStatic` | `boolean` |
+| Property | Attribute | Type      |
+|----------|-----------|-----------|
+| `static` | `static`  | `boolean` |
 
 ## Slots
 
@@ -15,6 +15,7 @@ side of a page to navigate to seperate pages or different sections within the sa
 |-----------|--------------------------------------------------|
 |           | Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections. |
 | `heading` | Defines what to use as the header of the sidenav. |
+
 
 # auro-sidenavitem
 
@@ -40,6 +41,7 @@ side of a page to navigate to seperate pages or different sections within the sa
 | Part   | Description                  |
 |--------|------------------------------|
 | `link` | Apply CSS to the `a` element |
+
 
 # auro-sidenavsection
 

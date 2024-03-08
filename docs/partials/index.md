@@ -19,6 +19,11 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./readmeAddlInfo.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
+## Setup
+
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./setup.md) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ## Examples
 
 #### Default
@@ -34,6 +39,23 @@ The following example illustrates a common use case for the `sidenav` element th
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/full.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Responsive
+
+The following example is a responsive sidenav using the code outlined above to trigger the `static` attribute on window resize.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/responsive.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/responsive.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -90,11 +112,10 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 
 </auro-accordion>
 
-#### Collapsible
 
-The `<auro-sidenav>` element uses the attribute `isToggle` to toggle accordion functionality. This can be both static
-and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design
-token.
+#### Mobile experience header
+
+The `<auro-sidenav>` element uses the attribute `static` to toggle on/off accordion functionality with the navigation header. This can be both static and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design token.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/isToggle.html) -->

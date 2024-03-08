@@ -35,6 +35,74 @@ The `auro-sidenavitem` is an extension of the `auro-hyperlink` and used to creat
 Please refer to the below example to see how to use these components.
 <!-- AURO-GENERATED-CONTENT:END -->
 
+## Setup
+
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./setup.md) -->
+<!-- The below content is automatically added from ./setup.md -->
+The `auro-sidenav` component is configured to remain in "mobile" (read: accordion dropdown) form until passed the
+`static` attribute. See the code example below for a vanilla JavaScript solution to add and remove this attribute
+automatically when resizing the browser window. To see this code in action, resize the window for the **Responsive**
+example farther down the page.
+
+_This code example is a wrapper around the native `window.matchMedia`. Though Sidenav functions in SSR, this specific 
+function has a dependency on the browser environment._
+
+```javascript
+// This design token variable can be whatever/from wherever you want
+const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
+const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
+const mediaQueryString = `(min-width: ${breakpointPx})`
+const windowMediaMatcher = window.matchMedia(mediaQueryString);
+
+const toggleSidenavCollapse = (e) => {
+  // ! CHANGE THIS ID TO TARGET YOUR DESIRED ELEMENT!
+  const auroSidenavExample = document.getElementById("collapsible-example")
+
+  // onload does not include a match, manually specify it
+  if (e.matches === undefined) {
+    e.matches = window.innerWidth >= Number(breakpointPx.replace("px", ""))
+  }
+
+  if (e.matches) {
+    auroSidenavExample.setAttribute('static', '')
+  } else {
+    auroSidenavExample.removeAttribute('static')
+  }
+};
+
+windowMediaMatcher.onchange = toggleSidenavCollapse;
+window.onload = toggleSidenavCollapse;
+```
+
+**NOTE:** When using the above code outside of React or other frameworks, please place your script tag somewhere below
+the sidenav in your HTML.
+
+```html
+<body>
+  <auro-sidenav id="my-sidenav">...</auro-sidenav>
+  <!-- somewhere below your sidenav... -->
+  <script>
+    // script from above code block
+  </script>
+</body>
+```
+
+You may also leverage things like `useMediaQuery` from React MUI, or similar media query functions.
+
+```javascript
+import * as React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+export default function ResponsiveSidenav() {
+  const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
+  const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
+  const isMediumScreen = useMediaQuery(`(min-width: ${breakpointPx})`);
+
+  return <auro-sidenav static={isMediumScreen}>{`(min-width: ${breakpointPx}) matches: ${matches}`}</auro-sidenav>;
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ## Examples
 
 #### Default
@@ -44,24 +112,7 @@ The following example illustrates a common use case for the `sidenav` element th
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/full.html -->
-  <script>
-    // This design token variable can be whatever/from wherever you want
-    const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
-    const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
-    const mediaQueryString = `(min-width: ${breakpointPx})`
-    const windowMediaMatcher = window.matchMedia(mediaQueryString);
-    const toggleSidenavCollapse = (e) => {
-      const auroSidenavExample = document.getElementById("collapsible-example")
-      if (!e.matches) {
-        auroSidenavExample.removeAttribute("static")
-      } else {
-        auroSidenavExample.setAttribute('static', "")
-      }
-    };
-    windowMediaMatcher.onchange = toggleSidenavCollapse;
-    window.onload = toggleSidenavCollapse;
-  </script>
-  <auro-sidenav id="collapsible-example">
+  <auro-sidenav static>
     <span slot="heading">Pet travel policies</span>
     <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
@@ -84,24 +135,7 @@ The following example illustrates a common use case for the `sidenav` element th
 <!-- The below code snippet is automatically added from ./../../apiExamples/full.html -->
 
 ```html
-<script>
-  // This design token variable can be whatever/from wherever you want
-  const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
-  const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
-  const mediaQueryString = `(min-width: ${breakpointPx})`
-  const windowMediaMatcher = window.matchMedia(mediaQueryString);
-  const toggleSidenavCollapse = (e) => {
-    const auroSidenavExample = document.getElementById("collapsible-example")
-    if (!e.matches) {
-      auroSidenavExample.removeAttribute("static")
-    } else {
-      auroSidenavExample.setAttribute('static', "")
-    }
-  };
-  windowMediaMatcher.onchange = toggleSidenavCollapse;
-  window.onload = toggleSidenavCollapse;
-</script>
-<auro-sidenav id="collapsible-example">
+<auro-sidenav static>
   <span slot="heading">Pet travel policies</span>
   <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
@@ -115,6 +149,37 @@ The following example illustrates a common use case for the `sidenav` element th
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#dog-info" target="_blank">Dogs</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa#cat-info" target="_blank">Cats</auro-sidenavitem>
   </auro-sidenavsection>
+</auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Responsive
+
+The following example is a responsive sidenav using the code outlined above to trigger the `static` attribute on window resize.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/responsive.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/responsive.html -->
+  <auro-sidenav id="collapsible-example">
+    <span slot="heading">Responsive Sidenav</span>
+    <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+  </auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/responsive.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/responsive.html -->
+
+```html
+<auro-sidenav id="collapsible-example">
+  <span slot="heading">Responsive Sidenav</span>
+  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
 </auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -153,7 +218,7 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### selected
+#### Selected
 
 The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-sidenavitem>` element to designate an item as active.
 
@@ -247,11 +312,9 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### Collapsible
+#### Mobile experience header
 
-The `<auro-sidenav>` element uses the attribute `isToggle` to toggle accordion functionality. This can be both static
-and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design
-token.
+The `<auro-sidenav>` element uses the attribute `static` to toggle on/off accordion functionality with the navigation header. This can be both static and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design token.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/isToggle.html) -->

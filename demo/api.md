@@ -8,9 +8,9 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 ## Properties
 
-| Property   | Attribute  | Type      |
-|------------|------------|-----------|
-| [isStatic](#isStatic) | `isStatic` | `boolean` |
+| Property | Attribute | Type      |
+|----------|-----------|-----------|
+| [static](#static) | `static`  | `boolean` |
 
 ## Slots
 
@@ -96,7 +96,6 @@ side of a page to navigate to seperate pages or different sections within the sa
 ### Slot Examples
 
 #### <a name="heading"></a>`heading`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-
 The `heading` slot defines what to use as the header of the sidenav.
 
 <div class="exampleWrapper">

@@ -150,6 +150,15 @@ export class AuroSidenav extends LitElement {
     this.addEventListener('mousedown', this.handleMouseDown);
   }
 
+  /**
+   * See [Lit Element updated](https://lit.dev/docs/v1/components/lifecycle/#updated)
+   * Asynchronously handles updates to the component.
+   * This method is automatically called when properties have been updated.
+   * @param {Map<string | number | symbol, unknown>} changedProperties - A Map of properties that have changed, where
+   * the key is the property name and the value is its previous value.
+   * @returns {Promise<void>} A Promise that resolves when the update is complete.
+   * @override
+   */
   async updated(changedProperties) {
     super.updated(changedProperties);
     await this.updateComplete;
