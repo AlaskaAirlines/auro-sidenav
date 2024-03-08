@@ -52,5 +52,31 @@
       import {registerComponent} from '../index.js';
       registerComponent('custom-sidenav');
     </script>
+
+    <script>
+      // This design token variable can be whatever/from wherever you want
+      const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
+      const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
+      const mediaQueryString = `(min-width: ${breakpointPx})`
+      const windowMediaMatcher = window.matchMedia(mediaQueryString);
+
+      const toggleSidenavCollapse = (e) => {
+        const auroSidenavExample = document.getElementById("collapsible-example")
+
+        // onload does not include a match, manually specify it
+        if (e.matches === undefined) {
+          e.matches = window.innerWidth >= Number(breakpointPx.replace("px", ""))
+        }
+
+        if (e.matches) {
+          auroSidenavExample.setAttribute('static', '')
+        } else {
+          auroSidenavExample.removeAttribute('static')
+        }
+      };
+
+      windowMediaMatcher.onchange = toggleSidenavCollapse;
+      window.onload = toggleSidenavCollapse;
+    </script>
   </body>
 </html>

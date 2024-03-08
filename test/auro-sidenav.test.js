@@ -2,9 +2,27 @@ import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import '../src/auro-sidenav';
 
 describe('auro-sidenav', () => {
-  it('auro-sidenav is accessible', async () => {
+  it('auro-sidenav is accessible by default', async () => {
     const el = await fixture(html`
-      <auro-sidenav></auro-sidenav>
+      <auro-sidenav>
+        <span slot="heading">Heading</span>
+        <auro-sidenavitem class="linkOne" selected>Link 1</auro-sidenavitem>
+        <auro-sidenavitem class="linkTwo">Link 2</auro-sidenavitem>
+        <auro-sidenavitem class="linkThree">Link 3</auro-sidenavitem>
+      </auro-sidenav>
+    `);
+
+    await expect(el).to.be.accessible();
+  });
+
+  it('auro-sidenav is accessible with static attr', async () => {
+    const el = await fixture(html`
+      <auro-sidenav>
+        <span slot="heading">Heading</span>
+        <auro-sidenavitem class="linkOne" selected>Link 1</auro-sidenavitem>
+        <auro-sidenavitem class="linkTwo">Link 2</auro-sidenavitem>
+        <auro-sidenavitem class="linkThree">Link 3</auro-sidenavitem>
+      </auro-sidenav>
     `);
 
     await expect(el).to.be.accessible();
@@ -20,13 +38,13 @@ describe('auro-sidenav', () => {
 
     const el = await fixture(html`
       <auro-sidenav>
-      <span slot="heading">Heading</span>
-      <auro-sidenavitem class="levelOneLink">Level 1</auro-sidenavitem>
-      <auro-sidenavsection>
-        <span slot="trigger">Section</span>
-        <auro-sidenavitem class="levelTwoLink">Level 2</auro-sidenavitem>
-      </auro-sidenavsection>
-    </auro-sidenav>
+        <span slot="heading">Heading</span>
+        <auro-sidenavitem class="levelOneLink">Level 1</auro-sidenavitem>
+        <auro-sidenavsection>
+          <span slot="trigger">Section</span>
+          <auro-sidenavitem class="levelTwoLink">Level 2</auro-sidenavitem>
+        </auro-sidenavsection>
+      </auro-sidenav>
     `);
 
     const levelOneLink = el.querySelector(".levelOneLink");
@@ -80,21 +98,19 @@ describe('auro-sidenav', () => {
     expect(linkThree).to.have.attr('selected');
   });
 
-  it('renders collapsible sidebar when collapsible property is true', async () => {
-    const el = await fixture(html`
-      <auro-sidenav collapsible></auro-sidenav>
-    `);
-
-    // Check if the collapsible sidebar content is rendered
-    expect(el.shadowRoot.querySelector('auro-accordion')).to.not.be.null;
-  });
-
-  it('renders non-collapsible sidebar when collapsible property is false', async () => {
+  it('renders collapsible sidebar when static property is undefined', async () => {
     const el = await fixture(html`
       <auro-sidenav></auro-sidenav>
     `);
 
-    // Check if the non-collapsible sidebar content is rendered
+    expect(el.shadowRoot.querySelector('auro-accordion')).to.not.be.null;
+  });
+
+  it('renders non-static sidebar when static property is truthy', async () => {
+    const el = await fixture(html`
+      <auro-sidenav static></auro-sidenav>
+    `);
+
     expect(el.shadowRoot.querySelector('auro-accordion')).to.be.null;
   });
 });

@@ -6,6 +6,12 @@
 The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
 side of a page to navigate to seperate pages or different sections within the same page.
 
+## Properties
+
+| Property   | Attribute  | Type      |
+|------------|------------|-----------|
+| [isStatic](#isStatic) | `isStatic` | `boolean` |
+
 ## Slots
 
 | Name      | Description                                      |
@@ -90,12 +96,13 @@ side of a page to navigate to seperate pages or different sections within the sa
 ### Slot Examples
 
 #### <a name="heading"></a>`heading`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
+
 The `heading` slot defines what to use as the header of the sidenav.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/heading.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/heading.html -->
-  <auro-sidenav>
+  <auro-sidenav static>
     <span slot="heading">History of Alaska Airlines</span>
     <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
     <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
@@ -109,7 +116,7 @@ The `heading` slot defines what to use as the header of the sidenav.
 <!-- The below code snippet is automatically added from ./../../apiExamples/heading.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav static>
   <span slot="heading">History of Alaska Airlines</span>
   <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>

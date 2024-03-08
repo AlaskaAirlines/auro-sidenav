@@ -44,7 +44,24 @@ The following example illustrates a common use case for the `sidenav` element th
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/full.html -->
-  <auro-sidenav>
+  <script>
+    // This design token variable can be whatever/from wherever you want
+    const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
+    const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
+    const mediaQueryString = `(min-width: ${breakpointPx})`
+    const windowMediaMatcher = window.matchMedia(mediaQueryString);
+    const toggleSidenavCollapse = (e) => {
+      const auroSidenavExample = document.getElementById("collapsible-example")
+      if (!e.matches) {
+        auroSidenavExample.removeAttribute("static")
+      } else {
+        auroSidenavExample.setAttribute('static', "")
+      }
+    };
+    windowMediaMatcher.onchange = toggleSidenavCollapse;
+    window.onload = toggleSidenavCollapse;
+  </script>
+  <auro-sidenav id="collapsible-example">
     <span slot="heading">Pet travel policies</span>
     <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
@@ -67,7 +84,24 @@ The following example illustrates a common use case for the `sidenav` element th
 <!-- The below code snippet is automatically added from ./../../apiExamples/full.html -->
 
 ```html
-<auro-sidenav>
+<script>
+  // This design token variable can be whatever/from wherever you want
+  const DESIGN_TOKEN_VARIABLE = '--ds-grid-breakpoint-md';
+  const breakpointPx = getComputedStyle(document.documentElement).getPropertyValue(DESIGN_TOKEN_VARIABLE)
+  const mediaQueryString = `(min-width: ${breakpointPx})`
+  const windowMediaMatcher = window.matchMedia(mediaQueryString);
+  const toggleSidenavCollapse = (e) => {
+    const auroSidenavExample = document.getElementById("collapsible-example")
+    if (!e.matches) {
+      auroSidenavExample.removeAttribute("static")
+    } else {
+      auroSidenavExample.setAttribute('static', "")
+    }
+  };
+  windowMediaMatcher.onchange = toggleSidenavCollapse;
+  window.onload = toggleSidenavCollapse;
+</script>
+<auro-sidenav id="collapsible-example">
   <span slot="heading">Pet travel policies</span>
   <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
@@ -93,7 +127,7 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/hyperlink.html -->
-  <auro-sidenav>
+  <auro-sidenav static>
     <span slot="heading">Airlines</span>
     <auro-sidenavitem href="/" target="_blank">Alaska Airlines</auro-sidenavitem>
     <auro-sidenavitem href="https://www.aa.com/" target="_blank">American Airlines</auro-sidenavitem>
@@ -108,7 +142,7 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 <!-- The below code snippet is automatically added from ./../../apiExamples/hyperlink.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav static>
   <span slot="heading">Airlines</span>
   <auro-sidenavitem href="/" target="_blank">Alaska Airlines</auro-sidenavitem>
   <auro-sidenavitem href="https://www.aa.com/" target="_blank">American Airlines</auro-sidenavitem>
@@ -126,7 +160,7 @@ The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-s
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/selected.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/selected.html -->
-  <auro-sidenav>
+  <auro-sidenav static>
     <span slot="heading">Favorite In-Flight Meal</span>
     <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
     <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
@@ -142,7 +176,7 @@ The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-s
 <!-- The below code snippet is automatically added from ./../../apiExamples/selected.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav static>
   <span slot="heading">Favorite In-Flight Meal</span>
   <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
   <auro-sidenavitem selected>The Jetsetter's Jam Sandwich</auro-sidenavitem>
@@ -165,7 +199,7 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/sections.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/sections.html -->
-  <auro-sidenav>
+  <auro-sidenav static>
     <span slot="heading">Helpful links</span>
     <auro-sidenavsection>
       <span slot="trigger">Reservations</span>
@@ -191,7 +225,7 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 <!-- The below code snippet is automatically added from ./../../apiExamples/sections.html -->
 
 ```html
-<auro-sidenav>
+<auro-sidenav static>
   <span slot="heading">Helpful links</span>
   <auro-sidenavsection>
     <span slot="trigger">Reservations</span>
@@ -208,6 +242,43 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
     <auro-sidenavitem href="/content/travel-info/pets">Booking pet travel</auro-sidenavitem>
     <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/banfield-qa">Pet travel FAQ</auro-sidenavitem>
   </auro-sidenavsection>
+</auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Collapsible
+
+The `<auro-sidenav>` element uses the attribute `isToggle` to toggle accordion functionality. This can be both static
+and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design
+token.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/isToggle.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/isToggle.html -->
+  <auro-sidenav>
+      <span slot="heading">Collapsible side navigation (click to toggle)</span>
+      <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-hawaii">Traveling to Hawaii</auro-sidenavitem>
+      <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-international" target="_blank">International travel with pets</auro-sidenavitem>
+  </auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/isToggle.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/isToggle.html -->
+
+```html
+<auro-sidenav>
+    <span slot="heading">Collapsible side navigation (click to toggle)</span>
+    <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-cabin">Pets in cabin</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-with-pets/pets-in-baggage-compartment">Pets in baggage compartment</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-hawaii">Traveling to Hawaii</auro-sidenavitem>
+    <auro-sidenavitem href="/content/travel-info/policies/pets-traveling-international" target="_blank">International travel with pets</auro-sidenavitem>
 </auro-sidenav>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -231,7 +302,7 @@ Using the `registerComponent` function to create a custom `<auro-sidenav>` will 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
-  <custom-sidenav>
+  <custom-sidenav static>
     <span slot="heading">Alaska Airlines History</span>
     <custom-sidenavitem href="/content/about-us/history">Historical overview</custom-sidenavitem>
     <custom-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</custom-sidenavitem>
@@ -245,7 +316,7 @@ Using the `registerComponent` function to create a custom `<auro-sidenav>` will 
 <!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
 
 ```html
-<custom-sidenav>
+<custom-sidenav static>
   <span slot="heading">Alaska Airlines History</span>
   <custom-sidenavitem href="/content/about-us/history">Historical overview</custom-sidenavitem>
   <custom-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</custom-sidenavitem>
