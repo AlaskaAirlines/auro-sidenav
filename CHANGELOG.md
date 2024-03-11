@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.7](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.6...v1.1.7) (2024-03-11)
+
+
+### Performance Improvements
+
+* **update docs:** add full scope of all elements ([775dd28](https://github.com/AlaskaAirlines/auro-sidenav/commit/775dd286a616c9f607443e38aef872f675307daa))
+
 ## [1.1.6](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.5...v1.1.6) (2024-02-21)
 
 
