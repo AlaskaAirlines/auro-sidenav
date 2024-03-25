@@ -1,5 +1,44 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.7...v2.0.0) (2024-03-25)
+
+
+### Bug Fixes
+
+* **svg:** center svgs within sidenavitems [#17](https://github.com/AlaskaAirlines/auro-sidenav/issues/17) ([364db92](https://github.com/AlaskaAirlines/auro-sidenav/commit/364db9237ea60b5a964d219e9ed2116e1640c18a))
+
+
+### Features
+
+* mobile sidenav via attribute [#13](https://github.com/AlaskaAirlines/auro-sidenav/issues/13) ([c88af64](https://github.com/AlaskaAirlines/auro-sidenav/commit/c88af641146f998bc6d7b05c4f79f64ce85ee032))
+
+
+### BREAKING CHANGES
+
+* all auro-sidenav instances are now mobile until
+specified with the static attribute.
+
+Changes to be committed:
+	modified:   apiExamples/basic.html
+	modified:   apiExamples/custom.html
+	modified:   apiExamples/full.html
+	modified:   apiExamples/heading.html
+	modified:   apiExamples/hyperlink.html
+	modified:   apiExamples/isToggle.html
+	modified:   apiExamples/sections.html
+	modified:   apiExamples/selected.html
+	modified:   demo/api.md
+	modified:   demo/index.html
+	modified:   demo/index.md
+	modified:   docs/api.md
+	modified:   docs/partials/index.md
+	modified:   package-lock.json
+	modified:   src/auro-sidenav.js
+	modified:   src/auro-sidenavsection.js
+	modified:   test/auro-sidenav.test.js
+   modified:   apiExamples/collapsible.html
+   modified:   README.md
+
 ## [1.1.7](https://github.com/AlaskaAirlines/auro-sidenav/compare/v1.1.6...v1.1.7) (2024-03-11)
 
 
