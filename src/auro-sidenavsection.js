@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroAccordion } from '@aurodesignsystem/auro-accordion/dist/auro-accordion.js';
+import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
 
 import styleCss from './style-sections-css.js';
 
