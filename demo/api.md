@@ -48,21 +48,16 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 # auro-sidenavsection
 
-## Attributes
-
-| Attribute    | Type      | Description                                      |
-|--------------|-----------|--------------------------------------------------|
-| [alignRight](#alignRight) | `Boolean` | If set, the trigger content will align right.    |
-| [chevron](#chevron)    | `String`  | Sets chevron variant option. Possible values are: `none`, `right`. |
-| [emphasis](#emphasis)   | `Boolean` | If set, emphasis styles will be applied to the auro-accordions. |
-| [grouped](#grouped)    | `Boolean` | Attribute will be set on accordion when it appears in an accordion group. |
-| [variant](#variant)    | `String`  | Sets accordion variant option. Possible values are: `sm`, `lg`. |
-
 ## Properties
 
-| Property   | Attribute  | Type      | Description                        |
-|------------|------------|-----------|------------------------------------|
-| [expanded](#expanded) | `expanded` | `Boolean` | If set, the accordion is expanded. |
+| Property     | Attribute    | Type      | Default | Description                                      |
+|--------------|--------------|-----------|---------|--------------------------------------------------|
+| [alignRight](#alignRight) | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
+| [chevron](#chevron)    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
+| [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
+| [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
+| [grouped](#grouped)    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
+| [variant](#variant)    | `variant`    | `String`  |         | Sets accordion variant option. Possible values are: `sm`, `lg`. |
 
 ## Methods
 
@@ -72,9 +67,9 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 ## Events
 
-| Event            | Description                                      |
-|------------------|--------------------------------------------------|
-| [toggleExpanded](#toggleExpanded) | Notifies that the accordion has been expanded or closed. |
+| Event            | Type                                  | Description                                      |
+|------------------|---------------------------------------|--------------------------------------------------|
+| [toggleExpanded](#toggleExpanded) | `CustomEvent<{ expanded: boolean; }>` | Notifies that the accordion has been expanded or closed. |
 
 ## Slots
 
