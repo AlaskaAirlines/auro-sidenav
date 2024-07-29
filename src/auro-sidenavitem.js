@@ -5,7 +5,9 @@
 
 import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/src/auro-hyperlink.js';
 
-import styleCss from './style-items-css.js';
+import styleItemsCss from './style-items-css.js';
+import colorItemsCss from './color-items-css.js';
+import tokensCss from './tokens-css.js';
 
 // build the component class
 export class AuroSideNavItem extends AuroHyperlink {
@@ -14,7 +16,9 @@ export class AuroSideNavItem extends AuroHyperlink {
     const styles = super.styles;
     return [
       ...styles,
-      styleCss
+      styleItemsCss,
+      colorItemsCss,
+      tokensCss
     ];
   }
 }

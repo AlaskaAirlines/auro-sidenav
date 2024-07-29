@@ -1,0 +1,72 @@
+// Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/* stylelint-disable no-duplicate-selectors, custom-property-empty-line-before */
+
+// Import Auro tokens
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
+
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
+
+svg {
+  color: var(--ds-auro-sidenavitem-icon-color);
+}
+
+%hyperlink-styles {
+  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+
+  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-hover-container-color-default: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
+
+  --ds-auro-hyperlink-visited-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+
+  --ds-auro-hyperlink-focus-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-focus-container-color-default: none;
+  --ds-auro-hyperlink-focus-border-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-hyperlink-focus-outline-color-default: none;
+
+  &:focus-visible {
+    &:hover {
+      --ds-auro-hyperlink-hover-container-color-default: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
+      --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+    }
+  }
+}
+
+:host {
+  border-bottom-color: var(--ds-auro-sidenavitem-border-bottom-color);
+  border-left-color: var(--ds-auro-sidenavitem-border-left-color);
+
+  .hyperlink {
+    @extend %hyperlink-styles;
+  }
+}
+
+:host([role="button"]) {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .hyperlink--button { // necc to match auro-hyperlink class name
+    @extend %hyperlink-styles;
+  }
+}
+
+%selected-item-colors {
+  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+
+  &:focus-visible {
+    --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+  }
+}
+
+:host([selected]) {
+  --ds-auro-sidenavitem-border-left-color: var(--ds-color-border-ui-default-default, #{$ds-color-border-ui-default-default});
+
+  .hyperlink {
+    @extend %selected-item-colors;
+  }
+}
+

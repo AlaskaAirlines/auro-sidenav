@@ -103,7 +103,7 @@ describe('auro-sidenav', () => {
       <auro-sidenav></auro-sidenav>
     `);
 
-    expect(el.shadowRoot.querySelector('auro-accordion')).to.not.be.null;
+    expect(el.shadowRoot.getElementById('accordion')).to.not.be.null;
   });
 
   it('renders non-static sidebar when static property is truthy', async () => {

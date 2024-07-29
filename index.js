@@ -23,8 +23,6 @@ import { AuroSideNavSection } from './src/auro-sidenavsection.js';
   if (!customElements.get(sectionName)) {
     customElements.define(sectionName, class extends AuroSideNavSection {});
   }
-
-  console.warn(name, itemName, sectionName);
 }
 
 export { registerComponent }
