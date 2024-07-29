@@ -3,22 +3,24 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable lit/binding-positions, lit/no-invalid-html */
+
 // If using litElement base class
-import { LitElement, html } from "lit";
+import { LitElement } from "lit";
+import { html } from 'lit/static-html.js';
 
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { LitElement, html } from "lit";
-// import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
-import "@aurodesignsystem/auro-accordion";
+import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
+import accordionVersion from "./accordionVersion.js";
 
 // Register dependent components
 import './auro-sidenavsection.js';
 import './auro-sidenavitem.js';
 
-// Import touch detection lib
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
@@ -29,6 +31,17 @@ import styleCss from "./style-css.js";
 
 // build the component class
 export class AuroSidenav extends LitElement {
+  constructor() {
+    super();
+
+    const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
+    this.accordionTag = versioning.generateTag('auro-accordion', accordionVersion, AuroAccordion);
+  }
+
   static get properties() {
     return {
       static: {
@@ -45,7 +58,11 @@ export class AuroSidenav extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   /**
@@ -197,11 +214,11 @@ export class AuroSidenav extends LitElement {
       <slot @slotchange="{this.handleSlotChange}"></slot>
     `;
     const sidebarContentCollapsable = html`
-      <auro-accordion id="accordion" part="accordion-root" chevron="none">
+      <${this.accordionTag} id="accordion" part="accordion-root" chevron="none">
         <span slot="trigger"><slot name="heading"></slot></span>
         <!-- Listen for inner accordions -->
         <slot @slotchange="${this.handleSlotChange}"></slot>
-      </auro-accordion>
+      </${this.accordionTag}>
     `;
 
     return html`${this.static ? sidebarContent : sidebarContentCollapsable}`;

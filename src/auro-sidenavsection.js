@@ -5,7 +5,9 @@
 
 import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
 
-import styleCss from './style-sections-css.js';
+import styleSectionsCss from './style-sections-css.js';
+import colorSectionsCss from './color-sections-css.js';
+import tokensCss from './tokens-css.js';
 
 // build the component class
 export class AuroSideNavSection extends AuroAccordion {
@@ -14,7 +16,9 @@ export class AuroSideNavSection extends AuroAccordion {
     const styles = super.styles;
     return [
       ...styles,
-      styleCss
+      styleSectionsCss,
+      colorSectionsCss,
+      tokensCss
     ];
   }
 
