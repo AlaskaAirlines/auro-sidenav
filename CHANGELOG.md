@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0-beta.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v2.0.1...v2.1.0-beta.1) (2024-07-30)
+
+
+### Features
+
+* implement color theming support [#30](https://github.com/AlaskaAirlines/auro-sidenav/issues/30) ([c606e0e](https://github.com/AlaskaAirlines/auro-sidenav/commit/c606e0e0af3a185257755b045c3056fda66f0418))
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v2.0.0...v2.0.1) (2024-07-23)
 
 
