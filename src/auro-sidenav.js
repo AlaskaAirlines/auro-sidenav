@@ -9,6 +9,8 @@
 import { LitElement } from "lit";
 import { html } from 'lit/static-html.js';
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 
 import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
@@ -40,6 +42,11 @@ export class AuroSidenav extends LitElement {
      * @private
      */
     this.accordionTag = versioning.generateTag('auro-accordion', accordionVersion, AuroAccordion);
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   static get properties() {
@@ -162,6 +169,9 @@ export class AuroSidenav extends LitElement {
   }
 
   firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-sidenav');
+
     this.handleSlotChange();
     this.addEventListener('keydown', this.handleKeyDown);
     this.addEventListener('mousedown', this.handleMouseDown);
