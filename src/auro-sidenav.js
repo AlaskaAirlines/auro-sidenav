@@ -32,7 +32,7 @@ import tokensCss from "./tokens-css.js";
  */
 
 // build the component class
-export class AuroSidenav extends LitElement {
+export class AuroSideNav extends LitElement {
   constructor() {
     super();
 
@@ -237,5 +237,5 @@ export class AuroSidenav extends LitElement {
 
 // default internal definition
 if (!customElements.get("auro-sidenav")) {
-  customElements.define("auro-sidenav", AuroSidenav);
+  customElements.define("auro-sidenav", AuroSideNav);
 }
