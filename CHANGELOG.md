@@ -1,5 +1,25 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v2.0.1...v3.0.0) (2024-10-02)
+
+
+### Features
+
+* add tag name as attribute when custom registered ([fb5f221](https://github.com/AlaskaAirlines/auro-sidenav/commit/fb5f2212d8afd6bc0ef4fabcb4203d6bc63101da))
+* implement color theming support [#30](https://github.com/AlaskaAirlines/auro-sidenav/issues/30) ([c6b746f](https://github.com/AlaskaAirlines/auro-sidenav/commit/c6b746f648e73bf64520391b12fb215707db5aa2))
+
+
+### Performance Improvements
+
+* **label:** remove github label colors ([6c7ee0c](https://github.com/AlaskaAirlines/auro-sidenav/commit/6c7ee0cda5f4513c0b2f7380771c7bb1c0e45e96))
+* refactor custom component registration config ([19e26ab](https://github.com/AlaskaAirlines/auro-sidenav/commit/19e26ab95db9f44a23890f89f4a3dc944fc02a8b))
+* update dependencies ([06ba5f7](https://github.com/AlaskaAirlines/auro-sidenav/commit/06ba5f721681bfe7a77062f3f42ff900f99222e7))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theme support #30
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v2.0.0...v2.0.1) (2024-07-23)
 
 
