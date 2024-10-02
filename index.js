@@ -1,28 +1,9 @@
-import { AuroSidenav } from './src/auro-sidenav.js';
+import { AuroSideNav } from './src/auro-sidenav.js';
 import { AuroSideNavItem } from './src/auro-sidenavitem.js'; 
 import { AuroSideNavSection } from './src/auro-sidenavsection.js';
 
-/**
- * Register Custom Element.
- * @param {Object} name - Name to use for custom element.
- * @returns {void}
- */
- const registerComponent = (name = 'custom-sidenav') => {
-  const itemName = name + 'item';
-  const sectionName = name + 'section';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-  // alias definition
-  if (!customElements.get(name)) {
-    customElements.define(name, class extends AuroSidenav {});
-  }
-
-  if (!customElements.get(itemName)) {
-    customElements.define(itemName, class extends AuroSideNavItem {});
-  }
-
-  if (!customElements.get(sectionName)) {
-    customElements.define(sectionName, class extends AuroSideNavSection {});
-  }
-}
-
-export { registerComponent }
+RuntimeUtils.default.prototype.registerComponent('custom-sidenav', AuroSideNav);
+RuntimeUtils.default.prototype.registerComponent('custom-sidenavitem', AuroSideNavItem);
+RuntimeUtils.default.prototype.registerComponent('custom-sidenavsection', AuroSideNavSection);
