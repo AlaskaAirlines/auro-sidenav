@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.0...v3.0.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies in package.json [#35](https://github.com/AlaskaAirlines/auro-sidenav/issues/35) ([e34f7c9](https://github.com/AlaskaAirlines/auro-sidenav/commit/e34f7c991fb568acc2697ec0c20fee639f362a0b))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v2.0.1...v3.0.0) (2024-10-02)
 
 
