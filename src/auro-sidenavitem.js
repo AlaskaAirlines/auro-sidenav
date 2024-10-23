@@ -3,7 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/src/auro-hyperlink.js';
 
 import styleItemsCss from './style-items-css.js';
@@ -22,16 +21,9 @@ export class AuroSideNavItem extends AuroHyperlink {
       tokensCss
     ];
   }
+}
 
-  /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-sidenavitem"] - The name of element that you want to register to.
-   *
-   * @example
-   * AuroSideNav.register("custom-sidenavitem") // this will register this element to <custom-sidenavitem/>
-   *
-   */
-  static register(name = "auro-sidenavitem") {
-    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroSideNavItem);
-  }
+// default internal definition
+if (!customElements.get("auro-sidenavitem")) {
+  customElements.define("auro-sidenavitem", AuroSideNavItem);
 }
