@@ -1,11 +1,11 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
 
-const production = !process.env.ROLLUP_WATCH,
+const production = !process.env.ROLLUP_WATCH;
 
- modernConfig = {
+const modernConfig = {
   input: {
-    ['auro-sidenav__bundled']: './index.js',
+    'auro-sidenav__bundled': './index.js',
   },
   output: {
     format: 'esm',
@@ -23,7 +23,7 @@ const production = !process.env.ROLLUP_WATCH,
 
 const indexExamplesConfig = {
   input: {
-    ['index.min']: './demo/index.js',
+    'index.min': './demo/index.js',
   },
   output: {
     format: 'esm',
@@ -34,7 +34,7 @@ const indexExamplesConfig = {
 
 const apiExamplesConfig = {
   input: {
-    ['api.min']: './demo/api.js',
+    'api.min': './demo/api.js',
   },
   output: {
     format: 'esm',
@@ -43,4 +43,8 @@ const apiExamplesConfig = {
   plugins: [nodeResolve()],
 };
 
-export default [modernConfig, indexExamplesConfig, apiExamplesConfig];
+export default [
+  modernConfig,
+  indexExamplesConfig,
+  apiExamplesConfig
+];

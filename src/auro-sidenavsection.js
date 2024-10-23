@@ -3,7 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
 
 import styleSectionsCss from './style-sections-css.js';
@@ -23,15 +22,9 @@ export class AuroSideNavSection extends AuroAccordion {
     ];
   }
 
-  /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-sidenavsection"] - The name of element that you want to register to.
-   *
-   * @example
-   * AuroSideNavSection.register("custom-sidenavsection") // this will register this element to <custom-sidenavsection/>
-   *
-   */
-  static register(name = "auro-sidenavsection") {
-    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroSideNavSection);
-  }
+}
+
+// default internal definition
+if (!customElements.get("auro-sidenavsection")) {
+  customElements.define("auro-sidenavsection", AuroSideNavSection);
 }
