@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.1...v3.1.0) (2024-10-23)
+
+
+### Features
+
+* **api:** add register static method [#82](https://github.com/AlaskaAirlines/auro-sidenav/issues/82) ([d002c7b](https://github.com/AlaskaAirlines/auro-sidenav/commit/d002c7b0bd247262c76c8166f24a7689f4aec308))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.0...v3.0.1) (2024-10-08)
 
 
