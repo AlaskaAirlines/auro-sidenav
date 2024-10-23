@@ -16,10 +16,6 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
 import accordionVersion from "./accordionVersion.js";
 
-// Register dependent components
-import './auro-sidenavsection.js';
-import './auro-sidenavitem.js';
-
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
@@ -56,6 +52,18 @@ export class AuroSideNav extends LitElement {
         reflect: true
       }
     };
+  }
+
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-sidenav"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroSideNav.register("custom-sidenav") // this will register this element to <custom-sidenav/>
+   *
+   */
+  static register(name = "auro-sidenav") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroSideNav);
   }
 
   connectedCallback() {
@@ -153,7 +161,7 @@ export class AuroSideNav extends LitElement {
    * @private
    */
   initItems() {
-    this.items = Array.from(this.querySelectorAll('auro-sidenavitem'));
+    this.items = Array.from(this.querySelectorAll('auro-sidenavitem, [auro-sidenavitem]'));
   }
 
   /**
@@ -233,9 +241,4 @@ export class AuroSideNav extends LitElement {
 
     return html`${this.static ? sidebarContent : sidebarContentCollapsable}`;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-sidenav")) {
-  customElements.define("auro-sidenav", AuroSideNav);
 }
