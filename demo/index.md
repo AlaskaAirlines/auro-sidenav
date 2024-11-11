@@ -6,16 +6,16 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Sidenav
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
+<!-- The below content is automatically added from ../docs/partials/description.md -->
 `<auro-sidenav>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that provides users a way to create navigational interfaces on the left hand
 side of a page to navigate to separate pages or different sections within the same page.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-sidenav use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
-<!-- The below content is automatically added from ./useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ../docs/partials/useCases.md -->
 The `<auro-sidenav>` element should be used in situations where users may:
 
 * create in-page navigation for long content-heavy pages
@@ -24,8 +24,8 @@ The `<auro-sidenav>` element should be used in situations where users may:
 
 ## Additional Information
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./readmeAddlInfo.md) -->
-<!-- The below content is automatically added from ./readmeAddlInfo.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/readmeAddlInfo.md) -->
+<!-- The below content is automatically added from ../docs/partials/readmeAddlInfo.md -->
 When consuming the `auro-sidenav` you will be registering the `auro-sidenavitem` and `auro-sidenavsection` component as well as the `auro-sidenav` components to the DOM. These components will be necessary to create the navigation.
 
 The `auro-sidenavsection` is an extension of the `auro-accordion` can be used to create sections.
@@ -37,8 +37,8 @@ Please refer to the below example to see how to use these components.
 
 ## Setup
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./setup.md) -->
-<!-- The below content is automatically added from ./setup.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/setup.md) -->
+<!-- The below content is automatically added from ../docs/partials/setup.md -->
 The `auro-sidenav` component is configured to remain in "mobile" (read: accordion dropdown) form until passed the
 `static` attribute. See the code example below for a vanilla JavaScript solution to add and remove this attribute
 automatically when resizing the browser window. To see this code in action, resize the window for the **Responsive**
@@ -110,8 +110,8 @@ export default function ResponsiveSidenav() {
 The following example illustrates a common use case for the `sidenav` element that includes a navigation header, an accordion sub-nav action, as well as a link that will open to an external URL.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/full.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/full.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/full.html) -->
+  <!-- The below content is automatically added from ../apiExamples/full.html -->
   <auro-sidenav static>
     <span slot="heading">Pet travel policies</span>
     <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
@@ -131,8 +131,8 @@ The following example illustrates a common use case for the `sidenav` element th
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/full.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/full.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/full.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/full.html -->
 
 ```html
 <auro-sidenav static>
@@ -159,8 +159,8 @@ The following example illustrates a common use case for the `sidenav` element th
 The following example is a responsive sidenav using the code outlined above to trigger the `static` attribute on window resize.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/responsive.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/responsive.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/responsive.html) -->
+  <!-- The below content is automatically added from ../apiExamples/responsive.html -->
   <auro-sidenav id="collapsible-example">
     <span slot="heading">Responsive Sidenav</span>
     <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
@@ -171,8 +171,8 @@ The following example is a responsive sidenav using the code outlined above to t
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/responsive.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/responsive.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/responsive.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/responsive.html -->
 
 ```html
 <auro-sidenav id="collapsible-example">
@@ -190,8 +190,8 @@ The following example is a responsive sidenav using the code outlined above to t
 The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/components/defining/) of `<auro-hyperlink>` element. All of the [auro-hyperlink API](https://auro.alaskaair.com/components/auro/hyperlink/api) are therefore exposed through the `auro-sidenavitem`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/hyperlink.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/hyperlink.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/hyperlink.html) -->
+  <!-- The below content is automatically added from ../apiExamples/hyperlink.html -->
   <auro-sidenav static>
     <span slot="heading">Airlines</span>
     <auro-sidenavitem href="/" target="_blank">Alaska Airlines</auro-sidenavitem>
@@ -203,8 +203,8 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/hyperlink.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/hyperlink.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/hyperlink.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/hyperlink.html -->
 
 ```html
 <auro-sidenav static>
@@ -223,8 +223,8 @@ The `<auro-sidenavitem>` element is an [extension](https://lit.dev/docs/componen
 The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-sidenavitem>` element to designate an item as active.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/selected.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/selected.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/selected.html) -->
+  <!-- The below content is automatically added from ../apiExamples/selected.html -->
   <auro-sidenav static>
     <span slot="heading">Favorite In-Flight Meal</span>
     <auro-sidenavitem>Signature Fruit & Cheese Platter</auro-sidenavitem>
@@ -237,8 +237,8 @@ The `<auro-sidenav>` element supports using the `selected` attribute on `<auro-s
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/selected.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/selected.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/selected.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/selected.html -->
 
 ```html
 <auro-sidenav static>
@@ -262,8 +262,8 @@ The `<auro-sidenavitem>` elements will automatically be styled as tiered childre
 Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/components/auro/accordion/api) if you wish to use any of its additional atttributes or functionality.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/sections.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/sections.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/sections.html) -->
+  <!-- The below content is automatically added from ../apiExamples/sections.html -->
   <auro-sidenav static>
     <span slot="heading">Helpful links</span>
     <auro-sidenavsection>
@@ -286,8 +286,8 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/sections.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/sections.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/sections.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/sections.html -->
 
 ```html
 <auro-sidenav static>
@@ -317,8 +317,8 @@ Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/co
 The `<auro-sidenav>` element uses the attribute `static` to toggle on/off accordion functionality with the navigation header. This can be both static and dynamic. Refer to the [default](#default) example for how to change this value dynamically based on a specific media query design token.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/isToggle.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/isToggle.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/isToggle.html) -->
+  <!-- The below content is automatically added from ../apiExamples/isToggle.html -->
   <auro-sidenav>
       <span slot="heading">Collapsible side navigation (click to toggle)</span>
       <auro-sidenavitem href="/content/travel-info/pets">Pet travel overview</auro-sidenavitem>
@@ -331,8 +331,8 @@ The `<auro-sidenav>` element uses the attribute `static` to toggle on/off accord
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/isToggle.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/isToggle.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/isToggle.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/isToggle.html -->
 
 ```html
 <auro-sidenav>
@@ -368,8 +368,8 @@ This will create a new custom element that you can use in your HTML that will fu
 Using the `registerComponent` function to create a custom `<auro-sidenav>` will also create a custom `<auro-sidenavitem>` and `<auro-sidenavsection>` with the exact same naming convention. For example, using `registerComponent('custom-sidenav')` will result in `<custom-sidenavitem>` and `<custom-sidenavsection>` also being created.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom.html -->
   <custom-sidenav static>
     <span slot="heading">Alaska Airlines History</span>
     <custom-sidenavitem href="/content/about-us/history">Historical overview</custom-sidenavitem>
@@ -380,8 +380,8 @@ Using the `registerComponent` function to create a custom `<auro-sidenav>` will 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom.html -->
 
 ```html
 <custom-sidenav static>
