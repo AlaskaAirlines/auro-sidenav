@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
+<!-- The below content is automatically added from ../docs/api.md -->
 
 # auro-sidenav
 
@@ -97,8 +97,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 The `heading` slot defines what to use as the header of the sidenav.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/heading.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/heading.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/heading.html) -->
+  <!-- The below content is automatically added from ../apiExamples/heading.html -->
   <auro-sidenav static>
     <span slot="heading">History of Alaska Airlines</span>
     <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
@@ -109,8 +109,8 @@ The `heading` slot defines what to use as the header of the sidenav.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/heading.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/heading.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/heading.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/heading.html -->
 
 ```html
 <auro-sidenav static>
@@ -127,8 +127,8 @@ The `heading` slot defines what to use as the header of the sidenav.
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ../src/tokens.scss -->
 
 ```scss
 @import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
