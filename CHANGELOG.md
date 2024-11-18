@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.1...v3.1.0) (2024-11-18)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#40](https://github.com/AlaskaAirlines/auro-sidenav/issues/40) ([e305103](https://github.com/AlaskaAirlines/auro-sidenav/commit/e30510357c8166189ecb2d5b66cb355ca763697e))
+
+
+### Features
+
+* **api:** add register static method [#82](https://github.com/AlaskaAirlines/auro-sidenav/issues/82) ([82a0913](https://github.com/AlaskaAirlines/auro-sidenav/commit/82a0913d2daf959c97138eb8d5f8d4874a589fc5))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([81375d6](https://github.com/AlaskaAirlines/auro-sidenav/commit/81375d6c5c322d42b3df3fd5c9d7ade90aa4d4e3))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.1...v3.1.0) (2024-10-23)
 
 
