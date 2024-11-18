@@ -98,7 +98,7 @@ The `<auro-sidenav>` element uses `<auro-sidenavsection>` elements to create sec
 
 The `<auro-sidenavitem>` elements will automatically be styled as tiered children in the `<auro-sidenav>` element.
 
-Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/components/auro/accordion/api) if you wish to use any of its additional atttributes or functionality.
+Please [refer to the auro-accordion documentation](https://auro.alaskaair.com/components/auro/accordion/api) if you wish to use any of its additional attributes or functionality.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/sections.html) -->
