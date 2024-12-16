@@ -5,6 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
+
   call-publish-demo-workflow:
     uses: AlaskaAirlines/auro-library/.github/workflows/publishDemo.yml@main
     secrets:
