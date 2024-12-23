@@ -80,6 +80,9 @@
       "sass": "$sass"
     }
   },
+  "optionalDependencies": {
+    "@parcel/watcher-linux-x64-glibc": "*"
+  },
   "browserslist": [
     "last 2 Chrome versions",
     "last 2 iOS major versions",
