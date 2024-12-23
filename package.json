@@ -81,7 +81,8 @@
     }
   },
   "optionalDependencies": {
-    "@parcel/watcher-linux-x64-glibc": "*"
+    "@parcel/watcher-linux-x64-glibc": "*",
+    "@rollup/rollup-linux-x64-gnu": "*"
   },
   "browserslist": [
     "last 2 Chrome versions",
