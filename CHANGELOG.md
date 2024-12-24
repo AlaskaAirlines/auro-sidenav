@@ -1,5 +1,38 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.1...v3.1.0) (2024-12-24)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#40](https://github.com/AlaskaAirlines/auro-sidenav/issues/40) ([207b579](https://github.com/AlaskaAirlines/auro-sidenav/commit/207b579c745627fa60f3c7b708ee5bf382f23506))
+* update markdown partial pathing to consume new auro lib [#40](https://github.com/AlaskaAirlines/auro-sidenav/issues/40) ([e305103](https://github.com/AlaskaAirlines/auro-sidenav/commit/e30510357c8166189ecb2d5b66cb355ca763697e))
+
+
+### Features
+
+* **api:** add register static method [#82](https://github.com/AlaskaAirlines/auro-sidenav/issues/82) ([16fda43](https://github.com/AlaskaAirlines/auro-sidenav/commit/16fda439ab695e253af99e5d339eaf4c8d07e540))
+* **api:** add register static method [#82](https://github.com/AlaskaAirlines/auro-sidenav/issues/82) ([82a0913](https://github.com/AlaskaAirlines/auro-sidenav/commit/82a0913d2daf959c97138eb8d5f8d4874a589fc5))
+
+
+### Performance Improvements
+
+* add optional dependencies ([5d2f111](https://github.com/AlaskaAirlines/auro-sidenav/commit/5d2f1114fa87d5a2c18ab580da85cb9156def60b))
+* add optional dependency for rollup ([e4d7542](https://github.com/AlaskaAirlines/auro-sidenav/commit/e4d7542a2c3d100cdbf7b89c734b0edf81402a8d))
+* remove index.min ([55bc63b](https://github.com/AlaskaAirlines/auro-sidenav/commit/55bc63b54604ea203092129011960dc31d1d30e6))
+* reset version to latest tag 3.1.1 [#43](https://github.com/AlaskaAirlines/auro-sidenav/issues/43) ([b766ebe](https://github.com/AlaskaAirlines/auro-sidenav/commit/b766ebe2f7bc731b61a2f2cea245c06fbfdb1f56))
+* reset version to latest tag 3.1.1 [#43](https://github.com/AlaskaAirlines/auro-sidenav/issues/43) ([046d51b](https://github.com/AlaskaAirlines/auro-sidenav/commit/046d51b006cc6b049b29e25a3b872131099cd1d0))
+* update library to 3.0.2 ([81375d6](https://github.com/AlaskaAirlines/auro-sidenav/commit/81375d6c5c322d42b3df3fd5c9d7ade90aa4d4e3))
+* update node to version 22 ([b968259](https://github.com/AlaskaAirlines/auro-sidenav/commit/b968259f6b9cba1303972fe214729a4ac0237eec))
+* update readme ([e0664fa](https://github.com/AlaskaAirlines/auro-sidenav/commit/e0664fa6c0f37d290e2a9ed4953d05ac700d53ea))
+* update versions ([01f76c7](https://github.com/AlaskaAirlines/auro-sidenav/commit/01f76c751d576031a980e613516b9a3b72f42f9c))
+* update versions ([42417d7](https://github.com/AlaskaAirlines/auro-sidenav/commit/42417d70e381405faa4dab16bf05971d4c523254))
+
+
+### Reverts
+
+* Revert "feat(api): add register static method [#82](https://github.com/AlaskaAirlines/auro-sidenav/issues/82)" ([1ea707e](https://github.com/AlaskaAirlines/auro-sidenav/commit/1ea707e4f8c3842531db08d8f42890831dc5f9f7))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.1.0...v3.1.1) (2024-10-23)
 
 
