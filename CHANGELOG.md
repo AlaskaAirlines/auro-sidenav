@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.3](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.1.2...v3.1.3) (2024-12-27)
+
+
+### Performance Improvements
+
+* update node and status checks for tests ([ce37cf5](https://github.com/AlaskaAirlines/auro-sidenav/commit/ce37cf5fd9638052eb7ac844f514d50d3b887d71))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.0.1...v3.1.0) (2024-12-24)
 
 
