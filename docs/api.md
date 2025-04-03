@@ -19,6 +19,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 # auro-sidenavitem
 
+This will register this element with the browser.
+
 ## Properties
 
 | Property         | Attribute        | Modifiers | Type      | Default | Description                                      |
@@ -47,6 +49,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 
 # auro-sidenavsection
+
+This will register this element with the browser.
 
 ## Properties
 
