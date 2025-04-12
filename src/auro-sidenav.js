@@ -21,8 +21,8 @@ import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
 
 /**
- * The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
- * side of a page to navigate to seperate pages or different sections within the same page.
+ * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
+ * side of a page to navigate to separate pages or different sections within the same page.
  * @slot heading - Defines what to use as the header of the sidenav.
  * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
  */
