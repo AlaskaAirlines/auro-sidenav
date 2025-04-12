@@ -3,8 +3,8 @@
 
 # auro-sidenav
 
-The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
-side of a page to navigate to seperate pages or different sections within the same page.
+The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
+side of a page to navigate to separate pages or different sections within the same page.
 
 ## Properties
 
@@ -20,6 +20,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 | [heading](#heading) | Defines what to use as the header of the sidenav. |
 
 # auro-sidenavitem
+
+The auro-sidenavitem element is the default child element of auro-sidenav.
 
 ## Properties
 
@@ -48,6 +50,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 | [targetIcon](#targetIcon) | Allows styling to be applied to the icon that appears next to the hyperlink. |
 
 # auro-sidenavsection
+
+The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
 
 ## Properties
 
@@ -93,7 +97,8 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 ### Slot Examples
 
-#### <a name="heading"></a>`heading`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
+#### heading
+
 The `heading` slot defines what to use as the header of the sidenav.
 
 <div class="exampleWrapper">

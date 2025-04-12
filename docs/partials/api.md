@@ -5,7 +5,7 @@
 
 ### Slot Examples
 
-#### `heading`
+#### heading
 
 The `heading` slot defines what to use as the header of the sidenav.
 

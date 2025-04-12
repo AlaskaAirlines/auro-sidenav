@@ -24,6 +24,8 @@ export class AuroSideNavItem extends AuroHyperlink {
   }
 
   /**
+   * The auro-sidenavitem element is the default child element of auro-sidenav.
+   *
    * This will register this element with the browser.
    * @param {string} [name="auro-sidenavitem"] - The name of element that you want to register to.
    *

@@ -1,7 +1,7 @@
 # auro-sidenav
 
-The auro-sidenav element provides users a way to create navigational interfaces on the lefthand
-side of a page to navigate to seperate pages or different sections within the same page.
+The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
+side of a page to navigate to separate pages or different sections within the same page.
 
 ## Properties
 
@@ -19,7 +19,7 @@ side of a page to navigate to seperate pages or different sections within the sa
 
 # auro-sidenavitem
 
-This will register this element with the browser.
+The auro-sidenavitem element is the default child element of auro-sidenav.
 
 ## Properties
 
@@ -50,7 +50,7 @@ This will register this element with the browser.
 
 # auro-sidenavsection
 
-This will register this element with the browser.
+The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
 
 ## Properties
 
