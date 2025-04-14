@@ -10,6 +10,10 @@ import styleSectionsCss from './style-sections-css.js';
 import colorSectionsCss from './color-sections-css.js';
 import tokensCss from './tokens-css.js';
 
+/**
+ * The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
+ */
+
 // build the component class
 export class AuroSideNavSection extends AuroAccordion {
 
@@ -24,8 +28,6 @@ export class AuroSideNavSection extends AuroAccordion {
   }
 
   /**
-   * The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
-   *
    * This will register this element with the browser.
    * @param {string} [name="auro-sidenavsection"] - The name of element that you want to register to.
    *

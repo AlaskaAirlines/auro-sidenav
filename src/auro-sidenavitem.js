@@ -10,6 +10,10 @@ import styleItemsCss from './style-items-css.js';
 import colorItemsCss from './color-items-css.js';
 import tokensCss from './tokens-css.js';
 
+/**
+ * The auro-sidenavitem element can be used to create a link within the auro-sidenav.
+ */
+
 // build the component class
 export class AuroSideNavItem extends AuroHyperlink {
 
@@ -24,8 +28,6 @@ export class AuroSideNavItem extends AuroHyperlink {
   }
 
   /**
-   * The auro-sidenavitem element is the default child element of auro-sidenav.
-   *
    * This will register this element with the browser.
    * @param {string} [name="auro-sidenavitem"] - The name of element that you want to register to.
    *
