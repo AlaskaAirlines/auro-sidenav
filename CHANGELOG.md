@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.0.0...v4.0.1) (2025-04-15)
+
+
+### Performance Improvements
+
+* add wca script for docs api ([10918b3](https://github.com/AlaskaAirlines/auro-sidenav/commit/10918b3b0322e84d648203e536dee004f7310abd))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v3.1.4...v4.0.0) (2025-02-28)
 
 
