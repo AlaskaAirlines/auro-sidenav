@@ -4,31 +4,27 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SassCustomProperties';
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
 :host {
   border-bottom-color: var(--ds-auro-sidenavsection-border-color);
-  color: var(--ds-auro-sidenavsection-text-color);
+
+  --ds-auro-accordion-trigger-color: var(--ds-auro-sidenavsection-text-color);
+  --ds-auro-accordion-trigger-border-color: var(--ds-auro-sidenavsection-trigger-border-color);
+  --ds-auro-accordion-trigger-icon-color: var(--ds-auro-sidenavsection-icon-color);
 
   .trigger {
-    border-color: var(--ds-auro-sidenavsection-trigger-border-color);
-
     &:hover {
       background: var(--ds-auro-sidenavsection-trigger-background-hover-color);
     }
 
     &:focus-visible {
-      --ds-auro-sidenavsection-trigger-border-color: var(--ds-color-border-ui-focus-default, #{$ds-color-border-ui-focus-default});
+      --ds-auro-sidenavsection-trigger-border-color: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
     }
-  }
-}
-
-.iconWrapper {
-  svg {
-    color: var(--ds-auro-sidenavsection-icon-color);
   }
 }

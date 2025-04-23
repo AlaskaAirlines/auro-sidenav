@@ -6,8 +6,9 @@
 /* stylelint-disable no-duplicate-selectors, declaration-empty-line-before */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SassCustomProperties';
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
@@ -15,7 +16,7 @@
 svg {
   width: var(--ds-size-300, $ds-size-300);
   /* stylelint-disable-next-line declaration-no-important */
-  height: var(--ds-size-300, $ds-size-300) !important; // !important necc. to override inline styling
+  height: var(--ds-size-300, $ds-size-300) !important; // !important needed to override inline styling
 }
 
 %hyperlink-styles {
@@ -28,16 +29,10 @@ svg {
   font-size: var(--ds-text-body-size-lg, $ds-text-body-size-lg);
   line-height: var(--ds-text-body-height-lg, $ds-text-body-height-lg);
   /* stylelint-disable-next-line declaration-no-important */
-  text-decoration: none !important; // necc to override default hyperlink styling
+  text-decoration: none !important; // need to override default hyperlink styling
 
   &:focus-visible {
     border-radius: var(--ds-border-radius, $ds-border-radius);
-
-    &:hover {
-      background: var(--ds-color-ui-bkg-hover-default, $ds-color-ui-bkg-hover-default);
-      /* stylelint-disable-next-line declaration-no-important */
-      color: var(--ds-color-text-primary-default, $ds-color-text-primary-default) !important; // necc to override default hyperlink styling
-    }
   }
 }
 
@@ -57,7 +52,7 @@ svg {
 
 :host([role="button"]) {
   /* stylelint-disable-next-line selector-class-pattern */
-  .hyperlink--button { // necc to match auro-hyperlink class name
+  .hyperlink--button { // needs to match auro-hyperlink class name
     @extend %hyperlink-styles;
   }
 }
