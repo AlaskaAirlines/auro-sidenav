@@ -136,17 +136,17 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ../src/tokens.scss -->
 
 ```scss
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
-  --ds-auro-sidenav-text-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-sidenavitem-border-bottom-color: var(--ds-color-border-divider-default, #{$ds-color-border-divider-default});
+  --ds-auro-sidenav-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-sidenavitem-border-bottom-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
   --ds-auro-sidenavitem-border-left-color: transparent;
-  --ds-auro-sidenavitem-icon-color: var(--ds-color-icon-primary-default, #{$ds-color-icon-primary-default});
-  --ds-auro-sidenavsection-border-color: var(--ds-color-border-divider-default, #{$ds-color-border-divider-default});
-  --ds-auro-sidenavsection-icon-color: var(--ds-color-icon-primary-default, #{$ds-color-icon-primary-default});
-  --ds-auro-sidenavsection-text-color: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-sidenavsection-trigger-background-hover-color: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
+  --ds-auro-sidenavitem-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
+  --ds-auro-sidenavsection-border-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
+  --ds-auro-sidenavsection-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});;
+  --ds-auro-sidenavsection-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-sidenavsection-trigger-background-hover-color: var(--ds-advanced-color-state-background-hover, #{$ds-advanced-color-state-background-hover});
   --ds-auro-sidenavsection-trigger-border-color: transparent;
 }
 ```

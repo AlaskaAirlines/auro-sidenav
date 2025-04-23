@@ -6,8 +6,7 @@
 /* stylelint-disable no-duplicate-selectors, custom-property-empty-line-before */
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SassCustomProperties';
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
@@ -17,22 +16,22 @@ svg {
 }
 
 %hyperlink-styles {
-  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-default-color-default: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
 
-  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
-  --ds-auro-hyperlink-hover-container-color-default: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
+  --ds-auro-hyperlink-hover-color-default: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-hyperlink-hover-container-color-default: var(--ds-advanced-color-state-background-hover, #{$ds-advanced-color-state-background-hover});
 
-  --ds-auro-hyperlink-visited-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-visited-color-default: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
 
-  --ds-auro-hyperlink-focus-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+  --ds-auro-hyperlink-focus-color-default: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
   --ds-auro-hyperlink-focus-container-color-default: none;
-  --ds-auro-hyperlink-focus-border-color-default: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
-  --ds-auro-hyperlink-focus-outline-color-default: none;
+  --ds-auro-hyperlink-focus-border-color-default: var(--ds-advanced-color-state-focused, #{$ds-advanced-color-state-focused});
+  --ds-auro-hyperlink-focus-outline-color-default: transparent;
 
   &:focus-visible {
     &:hover {
-      --ds-auro-hyperlink-hover-container-color-default: var(--ds-color-container-ui-secondary-hover-default, #{$ds-color-container-ui-secondary-hover-default});
-      --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-primary-default, #{$ds-color-text-primary-default});
+      --ds-auro-hyperlink-hover-container-color-default: var(--ds-advanced-color-state-background-hover, #{$ds-advanced-color-state-background-hover});
+      --ds-auro-hyperlink-hover-color-default: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
     }
   }
 }
@@ -48,22 +47,22 @@ svg {
 
 :host([role="button"]) {
   /* stylelint-disable-next-line selector-class-pattern */
-  .hyperlink--button { // necc to match auro-hyperlink class name
+  .hyperlink--button { // needs to match auro-hyperlink class name
     @extend %hyperlink-styles;
   }
 }
 
 %selected-item-colors {
-  --ds-auro-hyperlink-default-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
-  --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+  --ds-auro-hyperlink-default-color-default: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
+  --ds-auro-hyperlink-hover-color-default: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
 
   &:focus-visible {
-    --ds-auro-hyperlink-hover-color-default: var(--ds-color-text-link-default, #{$ds-color-text-link-default});
+    --ds-auro-hyperlink-hover-color-default: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
   }
 }
 
 :host([selected]) {
-  --ds-auro-sidenavitem-border-left-color: var(--ds-color-border-ui-default-default, #{$ds-color-border-ui-default-default});
+  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
 
   .hyperlink {
     @extend %selected-item-colors;
