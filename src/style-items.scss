@@ -42,12 +42,14 @@ svg {
   border-bottom-width: 1px;
   border-bottom-style: solid;
 
-  border-left-width: 3px;
-  border-left-style: solid;
-
   .hyperlink {
     @extend %hyperlink-styles;
   }
+}
+
+:host([selected]) {
+  border-left-width: 3px;
+  border-left-style: solid;
 }
 
 :host([role="button"]) {

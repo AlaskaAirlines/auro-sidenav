@@ -38,7 +38,6 @@ svg {
 
 :host {
   border-bottom-color: var(--ds-auro-sidenavitem-border-bottom-color);
-  border-left-color: var(--ds-auro-sidenavitem-border-left-color);
 
   .hyperlink {
     @extend %hyperlink-styles;
@@ -62,7 +61,7 @@ svg {
 }
 
 :host([selected]) {
-  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
+  border-left-color: var(--ds-auro-sidenavitem-border-left-color);
 
   .hyperlink {
     @extend %selected-item-colors;

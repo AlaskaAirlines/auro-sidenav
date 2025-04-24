@@ -141,7 +141,7 @@ The component may be restyled using the following code sample and changing the v
 :host {
   --ds-auro-sidenav-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
   --ds-auro-sidenavitem-border-bottom-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
-  --ds-auro-sidenavitem-border-left-color: transparent;
+  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
   --ds-auro-sidenavitem-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
   --ds-auro-sidenavsection-border-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
   --ds-auro-sidenavsection-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});;
