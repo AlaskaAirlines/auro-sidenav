@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.0.1...v4.1.0) (2025-04-30)
+
+
+### Bug Fixes
+
+* update sidenavitem border styles ([703e849](https://github.com/AlaskaAirlines/auro-sidenav/commit/703e849e5e46c1078351dbcefe1bfb108dc5f181))
+
+
+### Features
+
+* update to use new color theme tokens [#64](https://github.com/AlaskaAirlines/auro-sidenav/issues/64) ([31f2ed0](https://github.com/AlaskaAirlines/auro-sidenav/commit/31f2ed016f1184c635fa9ada690c2d802fc7c2e3))
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.0.0...v4.0.1) (2025-04-15)
 
 
