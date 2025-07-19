@@ -27,20 +27,20 @@ The auro-sidenavitem element is the default child element of auro-sidenav.
 
 | Property         | Attribute        | Modifiers | Type      | Default | Description                                      |
 |------------------|------------------|-----------|-----------|---------|--------------------------------------------------|
-| [download](#download)       | `download`       |           | `Boolean` | false   | If true, the linked resource will be downloaded when the hyperlink is clicked. |
-| [fluid](#fluid)          | `fluid`          |           | `Boolean` |         | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
-| [href](#href)           | `href`           |           | `String`  |         | Defines the URL of the linked page.              |
-| [ondark](#ondark)         | `ondark`         |           | `Boolean` | false   | If true, the hyperlink will be styled for use on a dark background. |
-| [referrerpolicy](#referrerpolicy) | `referrerpolicy` |           | `Boolean` |         | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
-| [rel](#rel)            | `rel`            |           | `String`  |         | Defines the relationship between the current document and the linked document. |
-| [relative](#relative)       | `relative`       |           | `Boolean` | false   | If true, the auto URL re-write feature will be disabled. |
-| [role](#role)           | `role`           |           | `String`  |         | Defines ARIA roles; currently supports `button` for extended experiences. |
+| [download](#download)       | `download`       |           | `boolean` | false   | If true, the linked resource will be downloaded when the hyperlink is clicked. |
+| [fluid](#fluid)          | `fluid`          |           | `boolean` |         | If true and `type="cta"`, the hyperlink will have a fluid-width UI. |
+| [href](#href)           | `href`           |           | `string`  |         | Defines the URL of the linked page.              |
+| [ondark](#ondark)         | `ondark`         |           | `boolean` | false   | If true, the hyperlink will be styled for use on a dark background. |
+| [referrerpolicy](#referrerpolicy) | `referrerpolicy` |           | `boolean` |         | If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests. |
+| [rel](#rel)            | `rel`            |           | `string`  |         | Defines the relationship between the current document and the linked document. |
+| [relative](#relative)       | `relative`       |           | `boolean` | false   | If true, the auto URL re-write feature will be disabled. |
+| [role](#role)           | `role`           |           | `string`  |         | DEPRECATED.                                      |
 | [safeUri](#safeUri)        |                  | readonly  | `string`  |         | Returns a safe URI based on the provided `href` and `relative` parameters.<br />If `href` is truthy, it generates a safe URL using the `safeUrl` function.<br />Otherwise, it returns an empty string. |
-| [secondary](#secondary)      | `secondary`      |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a secondary UI. |
-| [small](#small)          | `small`          |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a small UI. |
-| [target](#target)         | `target`         |           | `String`  |         | Defines where to open the linked document.       |
-| [tertiary](#tertiary)       | `tertiary`       |           | `Boolean` | false   | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
-| [type](#type)           | `type`           |           | `String`  |         | Defines the type of hyperlink; accepts `nav` or `cta`. |
+| [secondary](#secondary)      | `secondary`      |           | `boolean` | false   | If true and `type="cta"`, the hyperlink will have a secondary UI. |
+| [small](#small)          | `small`          |           | `boolean` | false   | If true and `type="cta"`, the hyperlink will have a small UI. |
+| [target](#target)         | `target`         |           | `string`  |         | Defines where to open the linked document.       |
+| [tertiary](#tertiary)       | `tertiary`       |           | `boolean` | false   | If true and `type="cta"`, the hyperlink will have a tertiary UI. |
+| [type](#type)           | `type`           |           | `string`  |         | Defines the type of hyperlink; accepts `nav` or `cta`. |
 
 ## CSS Shadow Parts
 
@@ -59,6 +59,7 @@ The auro-sidenavsection element can be used to create an accordion of auro-siden
 |--------------|--------------|-----------|---------|--------------------------------------------------|
 | [alignRight](#alignRight) | `alignRight` | `Boolean` |         | If set, the trigger content will align right.    |
 | [chevron](#chevron)    | `chevron`    | `String`  |         | Sets chevron variant option. Possible values are: `none`, `right`. |
+| [disabled](#disabled)   | `disabled`   | `Boolean` |         | If set, the accordion is disabled and have reduced opacity. |
 | [emphasis](#emphasis)   | `emphasis`   | `Boolean` |         | If set, emphasis styles will be applied to the auro-accordions. |
 | [expanded](#expanded)   | `expanded`   | `Boolean` | false   | If set, the accordion is expanded.               |
 | [grouped](#grouped)    | `grouped`    | `Boolean` |         | Attribute will be set on accordion when it appears in an accordion group. |
@@ -132,21 +133,21 @@ The `heading` slot defines what to use as the header of the sidenav.
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../src/styles/tokens.scss) -->
+<!-- The below code snippet is automatically added from ../src/styles/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 :host {
-  --ds-auro-sidenav-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
-  --ds-auro-sidenavitem-border-bottom-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
-  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{$ds-advanced-color-state-selected});
-  --ds-auro-sidenavitem-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
-  --ds-auro-sidenavsection-border-color: var(--ds-basic-color-border-divider, #{$ds-basic-color-border-divider});
-  --ds-auro-sidenavsection-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});;
-  --ds-auro-sidenavsection-text-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
-  --ds-auro-sidenavsection-trigger-background-hover-color: var(--ds-advanced-color-state-background-hover, #{$ds-advanced-color-state-background-hover});
+  --ds-auro-sidenav-text-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
+  --ds-auro-sidenavitem-border-bottom-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
+  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{v.$ds-advanced-color-state-selected});
+  --ds-auro-sidenavitem-icon-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});
+  --ds-auro-sidenavsection-border-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
+  --ds-auro-sidenavsection-icon-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});;
+  --ds-auro-sidenavsection-text-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
+  --ds-auro-sidenavsection-trigger-background-hover-color: var(--ds-advanced-color-state-background-hover, #{v.$ds-advanced-color-state-background-hover});
   --ds-auro-sidenavsection-trigger-border-color: transparent;
 }
 ```
