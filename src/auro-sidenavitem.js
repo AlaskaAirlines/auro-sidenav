@@ -6,9 +6,9 @@
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/src/auro-hyperlink.js';
 
-import styleItemsCss from './style-items-css.js';
-import colorItemsCss from './color-items-css.js';
-import tokensCss from './tokens-css.js';
+import styleItemsCss from './styles/style-items-css.js';
+import colorItemsCss from './styles/color-items-css.js';
+import tokensCss from './styles/tokens-css.js';
 
 /**
  * The auro-sidenavitem element can be used to create a link within the auro-sidenav.

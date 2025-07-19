@@ -16,9 +16,9 @@ import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts
 import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
 import accordionVersion from "./accordionVersion.js";
 
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-css.js";
+import colorCss from "./styles/color-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
