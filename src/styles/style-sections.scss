@@ -4,12 +4,12 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables';
-@import './../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SassCustomProperties';
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SassCustomProperties';
+@use '@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska';
 
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
-@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
+// @use '@aurodesignsystem/webcorestylesheets/src/breakpoints';
+@use '@aurodesignsystem/webcorestylesheets/src/core';
 
 // container styles - defines the look of the outer custom component
 :host {
@@ -23,12 +23,12 @@
   .trigger {
     width: 100%;
     justify-content: space-between;
-    padding: var(--ds-size-200, $ds-size-200);
+    padding: var(--ds-size-200, vac.$ds-size-200);
     border-width: 1px;
     border-style: solid;
 
     &:focus-visible {
-      border-radius: var(--ds-border-radius, $ds-border-radius);
+      border-radius: var(--ds-border-radius, vac.$ds-border-radius);
     }
   }
 
@@ -42,10 +42,10 @@
 }
 
 .iconWrapper {
-  height: var(--ds-size-300, $ds-size-300);
+  height: var(--ds-size-300, vac.$ds-size-300);
 
   svg {
-    width: var(--ds-size-300, $ds-size-300);
+    width: var(--ds-size-300, vac.$ds-size-300);
     /* stylelint-disable-next-line declaration-no-important */
     height: auto !important; // need to override inline styling
   }

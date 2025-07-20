@@ -1,0 +1,76 @@
+// Copyright (c) 2023 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+/* stylelint-disable no-duplicate-selectors, declaration-empty-line-before */
+
+// Import Auro tokens
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
+@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SassCustomProperties';
+@use '@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska' as v;
+
+// @use '@aurodesignsystem/webcorestylesheets/src/breakpoints';
+@use '@aurodesignsystem/webcorestylesheets/src/core';
+
+svg {
+  width: var(--ds-size-300, vac.$ds-size-300);
+  /* stylelint-disable-next-line declaration-no-important */
+  height: var(--ds-size-300, vac.$ds-size-300) !important; // !important needed to override inline styling
+}
+
+%hyperlink-styles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  font-size: var(--ds-text-body-size-lg, vac.$ds-text-body-size-lg);
+  line-height: var(--ds-text-body-height-lg, vac.$ds-text-body-height-lg);
+  /* stylelint-disable-next-line declaration-no-important */
+  text-decoration: none !important; // need to override default hyperlink styling
+
+  &:focus-visible {
+    border-radius: var(--ds-border-radius, vac.$ds-border-radius);
+  }
+}
+
+:host {
+  display: block;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+  .hyperlink {
+    @extend %hyperlink-styles;
+  }
+}
+
+:host([selected]) {
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+:host([role="button"]) {
+  /* stylelint-disable-next-line selector-class-pattern */
+  .hyperlink--button { // needs to match auro-hyperlink class name
+    @extend %hyperlink-styles;
+  }
+}
+
+:host([tier="0"]) {
+  .hyperlink {
+    padding: var(--ds-size-200, vac.$ds-size-200);
+    padding-left: calc(var(--ds-size-200, vac.$ds-size-200) - 2px);
+  }
+}
+
+:host([tier="1"]) {
+  .hyperlink {
+    padding: var(--ds-size-100, vac.$ds-size-100) var(--ds-size-200, vac.$ds-size-200) var(--ds-size-100, vac.$ds-size-100) var(--ds-size-500, vac.$ds-size-500);
+    padding-left: calc(var(--ds-size-500, vac.$ds-size-500) - 2px);
+    font-size: var(--ds-text-body-size-default, vac.$ds-text-body-size-default);
+    line-height:var(--ds-text-body-height-default, vac.$ds-text-body-height-default);
+  }
+}

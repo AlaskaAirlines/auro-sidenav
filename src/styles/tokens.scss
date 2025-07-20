@@ -1,0 +1,13 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+
+:host {
+  --ds-auro-sidenav-text-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
+  --ds-auro-sidenavitem-border-bottom-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
+  --ds-auro-sidenavitem-border-left-color: var(--ds-advanced-color-state-selected, #{v.$ds-advanced-color-state-selected});
+  --ds-auro-sidenavitem-icon-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});
+  --ds-auro-sidenavsection-border-color: var(--ds-basic-color-border-divider, #{v.$ds-basic-color-border-divider});
+  --ds-auro-sidenavsection-icon-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});;
+  --ds-auro-sidenavsection-text-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
+  --ds-auro-sidenavsection-trigger-background-hover-color: var(--ds-advanced-color-state-background-hover, #{v.$ds-advanced-color-state-background-hover});
+  --ds-auro-sidenavsection-trigger-border-color: transparent;
+}
