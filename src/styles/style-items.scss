@@ -3,32 +3,27 @@
 
 // ---------------------------------------------------------------------
 
-/* stylelint-disable no-duplicate-selectors, declaration-empty-line-before */
+/* stylelint-disable no-duplicate-selectors, declaration-empty-line-before, declaration-no-important */
 
 // Import Auro tokens
 @use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SassCustomProperties';
-@use '@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska' as v;
-
-// @use '@aurodesignsystem/webcorestylesheets/src/breakpoints';
 @use '@aurodesignsystem/webcorestylesheets/src/core';
+
+// Import type classes
+@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
 
 svg {
   width: var(--ds-size-300, vac.$ds-size-300);
-  /* stylelint-disable-next-line declaration-no-important */
   height: var(--ds-size-300, vac.$ds-size-300) !important; // !important needed to override inline styling
 }
 
 %hyperlink-styles {
-  display: flex;
+  display: flex !important; // need to override default hyperlink styling
   align-items: center;
   justify-content: space-between;
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
-  font-size: var(--ds-text-body-size-lg, vac.$ds-text-body-size-lg);
-  line-height: var(--ds-text-body-height-lg, vac.$ds-text-body-height-lg);
-  /* stylelint-disable-next-line declaration-no-important */
   text-decoration: none !important; // need to override default hyperlink styling
 
   &:focus-visible {
@@ -45,6 +40,10 @@ svg {
   .hyperlink {
     @extend %hyperlink-styles;
   }
+}
+
+:host(:not([fluid])) {
+  display: block;
 }
 
 :host([selected]) {
@@ -70,7 +69,5 @@ svg {
   .hyperlink {
     padding: var(--ds-size-100, vac.$ds-size-100) var(--ds-size-200, vac.$ds-size-200) var(--ds-size-100, vac.$ds-size-100) var(--ds-size-500, vac.$ds-size-500);
     padding-left: calc(var(--ds-size-500, vac.$ds-size-500) - 2px);
-    font-size: var(--ds-text-body-size-default, vac.$ds-text-body-size-default);
-    line-height:var(--ds-text-body-height-default, vac.$ds-text-body-height-default);
   }
 }
