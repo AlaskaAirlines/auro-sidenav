@@ -97,13 +97,10 @@ export class AuroSideNav extends LitElement {
       for (const element of node.children) {
         if (element.tagName.includes('ITEM')) {
           element.setAttribute('tier', depth);
-          const anchor = element.shadowRoot.querySelector('.hyperlink');
-          if (anchor) {
-            if (depth > 0) {
-              anchor.classList.add('body-default');
-            } else {
-              anchor.classList.add('body-lg');
-            }
+          if (depth > 0) {
+            element.classList.add('body-default');
+          } else {
+            element.classList.add('body-lg');
           }
           if (!element.hasAttribute('href')) {
             element.setAttribute('role', 'button');
