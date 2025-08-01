@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [4.1.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.1.0...v4.1.1) (2025-08-01)
+
+
+### Bug Fixes
+
+* update css import to use ([c9394a3](https://github.com/AlaskaAirlines/auro-sidenav/commit/c9394a3b2f5cbd15562f3ec109bc81d6e0538c90))
+* update docs head content ([3f6247b](https://github.com/AlaskaAirlines/auro-sidenav/commit/3f6247bde5bd274e7d0009e7f73a8d42f08e51ff))
+* update type to use classes ([0d71436](https://github.com/AlaskaAirlines/auro-sidenav/commit/0d71436b3e0abc5f7141eb72dfcd50e8fef609c5))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.0.1...v4.1.0) (2025-04-30)
 
 
