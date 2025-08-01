@@ -4,11 +4,11 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 // Import type classes
-@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+@use "@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css";
 
 // container styles - defines the look of the outer custom component
 :host {

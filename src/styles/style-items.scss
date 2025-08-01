@@ -6,11 +6,11 @@
 /* stylelint-disable no-duplicate-selectors, declaration-empty-line-before, declaration-no-important */
 
 // Import Auro tokens
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 // Import type classes
-@use '@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css';
+@use "@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css";
 
 svg {
   width: var(--ds-size-300, vac.$ds-size-300);

@@ -4,8 +4,8 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 // container styles - defines the look of the outer custom component
 :host {
