@@ -63,16 +63,16 @@
 
       const toggleSidenavCollapse = (e) => {
         const auroSidenavExample = document.getElementById("collapsible-example")
-
+        
         // onload does not include a match, manually specify it
         if (e.matches === undefined) {
           e.matches = window.innerWidth >= Number(breakpointPx.replace("px", ""))
         }
-
+        
         if (e.matches) {
-          auroSidenavExample.setAttribute('static', '')
+          auroSidenavExample?.setAttribute('static', '')
         } else {
-          auroSidenavExample.removeAttribute('static')
+          auroSidenavExample?.removeAttribute('static')
         }
       };
 
