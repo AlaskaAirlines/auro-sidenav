@@ -4,12 +4,12 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables' as vac;
-@use '@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SassCustomProperties';
-@use '@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska' as v;
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SassCustomProperties";
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-@use '@aurodesignsystem/webcorestylesheets/src/breakpoints';
-@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 :host {
   border-bottom-color: var(--ds-auro-sidenavsection-border-color);

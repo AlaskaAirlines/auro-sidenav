@@ -6,10 +6,10 @@
 /* stylelint-disable no-duplicate-selectors, custom-property-empty-line-before */
 
 // Import Auro tokens
-@use '@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska' as v;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-@use '@aurodesignsystem/webcorestylesheets/src/breakpoints';
-@use '@aurodesignsystem/webcorestylesheets/src/core';
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 svg {
   color: var(--ds-auro-sidenavitem-icon-color);
