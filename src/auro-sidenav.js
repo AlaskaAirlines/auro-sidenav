@@ -70,6 +70,7 @@ export class AuroSideNav extends LitElement {
     super.connectedCallback();
     this.setAttribute("role", "navigation");
     this.setAttribute("aria-label", "Main");
+    this.classList.add("body-lg");
   }
 
   static get styles() {
@@ -96,6 +97,14 @@ export class AuroSideNav extends LitElement {
       for (const element of node.children) {
         if (element.tagName.includes('ITEM')) {
           element.setAttribute('tier', depth);
+          const anchor = element.shadowRoot.querySelector('.hyperlink');
+          if (anchor) {
+            if (depth > 0) {
+              anchor.classList.add('body-default');
+            } else {
+              anchor.classList.add('body-lg');
+            }
+          }
           if (!element.hasAttribute('href')) {
             element.setAttribute('role', 'button');
           }
@@ -205,6 +214,9 @@ export class AuroSideNav extends LitElement {
         const sidenavMobileAccordionContent = sidenavMobileAccordion.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
 
         // Catch all nested accordion expansion events
+        if (!sidenavMobileAccordionContent) {
+          return;
+        }
         sidenavMobileAccordionContent.addEventListener("toggleExpanded", (event) => {
           const nestedAccordionElement = event.target;
           const nestedAccordionContent = nestedAccordionElement.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
@@ -228,12 +240,12 @@ export class AuroSideNav extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const sidebarContent = html`
-      <span><slot name="heading"></slot></span>
-      <slot @slotchange="{this.handleSlotChange}"></slot>
+      <span><slot class="heading-2xs" name="heading"></slot></span>
+      <slot @slotchange="${this.handleSlotChange}"></slot>
     `;
     const sidebarContentCollapsable = html`
       <${this.accordionTag} id="accordion" part="accordion-root" chevron="none">
-        <span slot="trigger"><slot name="heading"></slot></span>
+        <span slot="trigger"><slot class="heading-2xs" name="heading"></slot></span>
         <!-- Listen for inner accordions -->
         <slot @slotchange="${this.handleSlotChange}"></slot>
       </${this.accordionTag}>
