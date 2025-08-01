@@ -23,9 +23,9 @@ const toggleSidenavCollapse = (e) => {
   }
 
   if (e.matches) {
-    auroSidenavExample.setAttribute('static', '')
+    auroSidenavExample?.setAttribute('static', '')
   } else {
-    auroSidenavExample.removeAttribute('static')
+    auroSidenavExample?.removeAttribute('static')
   }
 };
 
