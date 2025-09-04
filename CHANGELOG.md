@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.1.2](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.1.1...v4.1.2) (2025-09-04)
+
+
+### Performance Improvements
+
+* update accordion for icon fix and all other auro dependencies [#79](https://github.com/AlaskaAirlines/auro-sidenav/issues/79) ([7ea07f1](https://github.com/AlaskaAirlines/auro-sidenav/commit/7ea07f1d2de14b1041fdec3b704552959664a3a6))
+
 ## [4.1.1](https://github.com/AlaskaAirlines/auro-sidenav/compare/v4.1.0...v4.1.1) (2025-08-01)
 
 
