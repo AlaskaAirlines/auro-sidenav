@@ -1,8 +1,8 @@
-import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
-import '../index';
+import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
+import "../index";
 
-describe('auro-sidenav', () => {
-  it('auro-sidenav is accessible by default', async () => {
+describe("auro-sidenav", () => {
+  it("auro-sidenav is accessible by default", async () => {
     const el = await fixture(html`
       <auro-sidenav>
         <span slot="heading">Heading</span>
@@ -15,7 +15,7 @@ describe('auro-sidenav', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-sidenav is accessible with static attr', async () => {
+  it("auro-sidenav is accessible with static attr", async () => {
     const el = await fixture(html`
       <auro-sidenav>
         <span slot="heading">Heading</span>
@@ -28,14 +28,13 @@ describe('auro-sidenav', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-sidenav custom element is defined', async () => {
+  it("auro-sidenav custom element is defined", async () => {
     const el = await !!customElements.get("auro-sidenav");
 
     await expect(el).to.be.true;
   });
 
-  it('auro-sidenav applies proper attributes to slotted children', async () => {
-
+  it("auro-sidenav applies proper attributes to slotted children", async () => {
     const el = await fixture(html`
       <auro-sidenav>
         <span slot="heading">Heading</span>
@@ -51,14 +50,13 @@ describe('auro-sidenav', () => {
     const levelTwoLink = el.querySelector(".levelTwoLink");
     const section = el.querySelector("auro-sidenavsection");
 
-    await expect(levelOneLink).to.have.attr('tier', '0');
-    await expect(levelTwoLink).to.have.attr('tier', '1');
-    await expect(section).to.have.attr('chevron', 'true');
-    await expect(section).to.have.attr('fluid', 'true');
+    await expect(levelOneLink).to.have.attr("tier", "0");
+    await expect(levelTwoLink).to.have.attr("tier", "1");
+    await expect(section).to.have.attr("chevron", "true");
+    await expect(section).to.have.attr("fluid", "true");
   });
 
-  it('auro-sidenav updates sidenavitem with selected attribute', async () => {
-
+  it("auro-sidenav updates sidenavitem with selected attribute", async () => {
     const el = await fixture(html`
       <auro-sidenav>
       <span slot="heading">Heading</span>
@@ -72,45 +70,49 @@ describe('auro-sidenav', () => {
     const linkTwo = el.querySelector(".linkTwo");
     const linkThree = el.querySelector(".linkThree");
 
-    expect(linkOne).to.have.attr('selected');
-    expect(linkTwo).not.to.have.attr('selected');
-    expect(linkThree).not.to.have.attr('selected');
+    expect(linkOne).to.have.attr("selected");
+    expect(linkTwo).not.to.have.attr("selected");
+    expect(linkThree).not.to.have.attr("selected");
 
-    linkTwo.dispatchEvent(new Event('mousedown', {
-      bubbles: true,
-      composed: true,
-    }));
+    linkTwo.dispatchEvent(
+      new Event("mousedown", {
+        bubbles: true,
+        composed: true,
+      }),
+    );
     await elementUpdated(el);
 
-    expect(linkOne).not.to.have.attr('selected');
-    expect(linkTwo).to.have.attr('selected');
-    expect(linkThree).not.to.have.attr('selected');
+    expect(linkOne).not.to.have.attr("selected");
+    expect(linkTwo).to.have.attr("selected");
+    expect(linkThree).not.to.have.attr("selected");
 
-    linkThree.dispatchEvent(new KeyboardEvent('keydown', {
-      bubbles: true,
-      composed: true,
-      key: 'Enter'
-    }));
+    linkThree.dispatchEvent(
+      new KeyboardEvent("keydown", {
+        bubbles: true,
+        composed: true,
+        key: "Enter",
+      }),
+    );
     await elementUpdated(el);
 
-    expect(linkOne).not.to.have.attr('selected');
-    expect(linkTwo).not.to.have.attr('selected');
-    expect(linkThree).to.have.attr('selected');
+    expect(linkOne).not.to.have.attr("selected");
+    expect(linkTwo).not.to.have.attr("selected");
+    expect(linkThree).to.have.attr("selected");
   });
 
-  it('renders collapsible sidebar when static property is undefined', async () => {
+  it("renders collapsible sidebar when static property is undefined", async () => {
     const el = await fixture(html`
       <auro-sidenav></auro-sidenav>
     `);
 
-    expect(el.shadowRoot.getElementById('accordion')).to.not.be.null;
+    expect(el.shadowRoot.getElementById("accordion")).to.not.be.null;
   });
 
-  it('renders non-static sidebar when static property is truthy', async () => {
+  it("renders non-static sidebar when static property is truthy", async () => {
     const el = await fixture(html`
       <auro-sidenav static></auro-sidenav>
     `);
 
-    expect(el.shadowRoot.querySelector('auro-accordion')).to.be.null;
+    expect(el.shadowRoot.querySelector("auro-accordion")).to.be.null;
   });
 });

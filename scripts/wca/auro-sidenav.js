@@ -1,5 +1,4 @@
-
-import { AuroSideNav } from '../../src/auro-sidenav.js';
+import { AuroSideNav } from "../../src/auro-sidenav.js";
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
