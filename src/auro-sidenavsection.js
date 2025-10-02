@@ -5,9 +5,9 @@
 
 import { AuroAccordion } from "@aurodesignsystem/auro-accordion/src/auro-accordion.js";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import colorSectionsCss from "./styles/color-sections-css.js";
-import styleSectionsCss from "./styles/style-sections-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorSectionsCss from "./styles/color-sections.scss";
+import styleSectionsCss from "./styles/style-sections.scss";
+import tokensCss from "./styles/tokens.scss";
 
 /**
  * The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.

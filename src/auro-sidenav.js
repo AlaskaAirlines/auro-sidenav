@@ -13,9 +13,9 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
 import { LitElement } from "lit";
 import { html } from "lit/static-html.js";
 import accordionVersion from "./accordionVersion.js";
-import colorCss from "./styles/color-css.js";
-import styleCss from "./styles/style-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
