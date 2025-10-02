@@ -1,5 +1,5 @@
 import { elementUpdated, expect, fixture, html } from "@open-wc/testing";
-import "../index";
+import "../src/registered";
 
 describe("auro-sidenav", () => {
   it("auro-sidenav is accessible by default", async () => {
