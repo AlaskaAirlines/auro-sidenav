@@ -3,12 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
-
-import styleSectionsCss from './styles/style-sections-css.js';
-import colorSectionsCss from './styles/color-sections-css.js';
-import tokensCss from './styles/tokens-css.js';
+import { AuroAccordion } from "@aurodesignsystem/auro-accordion/src/auro-accordion.js";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import colorSectionsCss from "./styles/color-sections-css.js";
+import styleSectionsCss from "./styles/style-sections-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 /**
  * The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
@@ -16,15 +15,9 @@ import tokensCss from './styles/tokens-css.js';
 
 // build the component class
 export class AuroSideNavSection extends AuroAccordion {
-
   static get styles() {
-    const styles = super.styles;
-    return [
-      ...styles,
-      styleSectionsCss,
-      colorSectionsCss,
-      tokensCss
-    ];
+    const styles = AuroAccordion.styles;
+    return [...styles, styleSectionsCss, colorSectionsCss, tokensCss];
   }
 
   /**
@@ -36,6 +29,9 @@ export class AuroSideNavSection extends AuroAccordion {
    *
    */
   static register(name = "auro-sidenavsection") {
-    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroSideNavSection);
+    AuroLibraryRuntimeUtils.prototype.registerComponent(
+      name,
+      AuroSideNavSection,
+    );
   }
 }
