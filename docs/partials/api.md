@@ -21,6 +21,24 @@ The `heading` slot defines what to use as the header of the sidenav.
 
 </auro-accordion>
 
+#### ariaLabel
+
+The `ariaLabel` slot defines what to use as the aria-label of the sidenav.
+
+**Note:** Do not use the `aria-label` attribute on the `auro-sidenav` element itself. This will be ignored in favor of the `ariaLabel` slot.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ariaLabelSlot.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ariaLabelSlot.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ### Theme Support
 
 The component may be restyled using the following code sample and changing the values of the following token(s).

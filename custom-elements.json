@@ -33,6 +33,10 @@
             {
               "description": "Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.",
               "name": ""
+            },
+            {
+              "description": "Defines what to use as the aria-label of the sidenav.",
+              "name": "ariaLabel"
             }
           ],
           "members": [
@@ -1363,6 +1367,14 @@
             {
               "description": "Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.",
               "name": "",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "description": "Defines what to use as the aria-label of the sidenav.",
+              "name": "ariaLabel",
               "inheritedFrom": {
                 "name": "AuroSideNav",
                 "module": "src/auro-sidenav.js"
