@@ -22,6 +22,7 @@ import tokensCss from "./styles/tokens.scss";
  * side of a page to navigate to separate pages or different sections within the same page.
  * @slot heading - Defines what to use as the header of the sidenav.
  * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
+ * @slot ariaLabel - Defines what to use as the aria-label of the sidenav.
  */
 
 // build the component class
@@ -74,7 +75,6 @@ export class AuroSideNav extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.setAttribute("role", "navigation");
-    this.setAttribute("aria-label", "Main");
     this.classList.add("body-lg");
   }
 
@@ -186,6 +186,8 @@ export class AuroSideNav extends LitElement {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, "auro-sidenav");
 
+    this.setAttribute("aria-label", this.runtimeUtils.getSlotText(this, "ariaLabel") || "Main");
+
     this.handleSlotChange();
     this.addEventListener("keydown", this.handleKeyDown);
     this.addEventListener("mousedown", this.handleMouseDown);
@@ -264,6 +266,11 @@ export class AuroSideNav extends LitElement {
       </${this.accordionTag}>
     `;
 
-    return html`${this.static ? sidebarContent : sidebarContentCollapsable}`;
+    return html`
+      <!-- Hidden slot for aria-label -->
+      <slot name="ariaLabel" hidden @slotchange=${this.requestUpdate}></slot>
+
+      ${this.static ? sidebarContent : sidebarContentCollapsable}
+    `;
   }
 }
