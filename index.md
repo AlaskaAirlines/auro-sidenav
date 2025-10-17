@@ -353,9 +353,7 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `register(name)` method in our `AuroSideNav` related components and pass in a unique name.
 
 ```js
-import { AuroSideNav } from './src/auro-sidenav.js';
-import { AuroSideNavItem } from './src/auro-sidenavitem.js'; 
-import { AuroSideNavSection } from './src/auro-sidenavsection.js';
+import { AuroSideNav, AuroSideNavItem, AuroSideNavSection } from '@aurodesignsystem/auro-sidenav/class';
 
 AuroSideNav.register('custom-sidenav');
 AuroSideNavItem.register('custom-sidenavitem');
