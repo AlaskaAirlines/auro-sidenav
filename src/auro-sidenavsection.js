@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import { AuroAccordion } from "@aurodesignsystem/auro-accordion/src/auro-accordion.js";
+import { AuroAccordion } from "@aurodesignsystem/auro-accordion/class";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 import colorSectionsCss from "./styles/color-sections.scss";
 import styleSectionsCss from "./styles/style-sections.scss";
