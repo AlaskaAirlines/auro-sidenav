@@ -1,0 +1,2677 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/accordionVersion.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "6.1.0",
+            "module": "src/accordionVersion.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-sidenav.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenav element provides users a way to create navigational interfaces on the left-hand\nside of a page to navigate to separate pages or different sections within the same page.",
+          "name": "AuroSideNav",
+          "slots": [
+            {
+              "description": "Defines what to use as the header of the sidenav.",
+              "name": "heading"
+            },
+            {
+              "description": "Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenav\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser."
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "description": "Used to update sidenavitem tiers on construction and",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseDown",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "Mousedown event.",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Used to update selected menu when navigating in-page content.",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "Event object from the browser.",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Manage Enter keyboard events.",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "initItems",
+              "description": "Initializes list of sidenavitems in the DOM. This must re-run whenever slotted items change.",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "selectItem",
+              "parameters": [
+                {
+                  "name": "selectedItem",
+                  "description": "Item to be selected.",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Updates items so that only specified item is selected.",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "accordionTag",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()"
+            },
+            {
+              "kind": "field",
+              "name": "static",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "When applied the sidenav will expand to an open state and can't be collapsed.",
+              "attribute": "static",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "static",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "When applied the sidenav will expand to an open state and can't be collapsed.",
+              "fieldName": "static"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroSideNav",
+          "declaration": {
+            "name": "AuroSideNav",
+            "module": "src/auro-sidenav.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-sidenavitem.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenavitem element can be used to create a link within the auro-sidenav.",
+          "name": "AuroSideNavItem",
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenavitem\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "static": true,
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_createRefs",
+              "description": "Create usable refs to internal elements",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutDefault",
+              "description": "Renders the default layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutCTA",
+              "description": "Renders the cta layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getMarkup",
+              "description": "Generates an object containing CSS classes based on the properties of the component.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "object"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "iconTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": "Defines ARIA roles; currently supports `button` for extended experiences.",
+              "name": "role",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "safeUri",
+              "description": "Returns a safe URI based on the provided `href` and `relative` parameters.\nIf `href` is truthy, it generates a safe URL using the `safeUrl` function.\nOtherwise, it returns an empty string.",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "includesDomain",
+              "description": "Checks whether the provided URI (if available) includes the 'http' protocol.\nIf the URI is truthy, it examines whether it contains 'http'.\nOtherwise, it returns false.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "safeUrl",
+              "parameters": [
+                {
+                  "name": "href",
+                  "description": "The original URL.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "relative",
+                  "description": "Indicates whether the URL is relative.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Generates a safe URL based on the provided `href` and `relative` parameters.\nIf `href` is falsy, it returns `undefined`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateIconHtml",
+              "parameters": [
+                {
+                  "name": "svgContent",
+                  "description": "The SVG content to be embedded.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an HTML element containing an SVG icon based on the provided `svgContent`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Element"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "targetIcon",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an icon HTML element based on the target attribute.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTabState",
+              "parameters": [
+                {
+                  "name": "tabIsActive",
+                  "description": "Indicates whether the tab is active.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Returns the state of a tab as a string.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getRelType",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "rel",
+                  "description": "The rel attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Gets the rel attribute value based on target and rel values.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "ariaPressedState",
+              "parameters": [
+                {
+                  "name": "ariaPressed",
+                  "description": "The initial value of the ARIA pressed state.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Sets the ARIA pressed state based on user interactions.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "appearance",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the component will be on lighter or darker backgrounds.",
+              "default": "'default'",
+              "attribute": "appearance",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "download",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "attribute": "download",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relative",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "attribute": "relative",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ondark",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "DEPRECATED - use `appearance` instead.",
+              "default": "false",
+              "attribute": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "attribute": "variant",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "layout",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shape",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultReferrerPolicy",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"strict-origin-when-cross-origin\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ariapressed",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "tabIsActive",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "attribute": "href",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "rel",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "attribute": "rel",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "attribute": "target",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fluid",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "attribute": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "referrerpolicy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "attribute": "referrerpolicy",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "AuroHyperlink",
+            "package": "@aurodesignsystem/auro-hyperlink/class"
+          },
+          "cssParts": [
+            {
+              "description": "Allows styling to be applied to the `a` element.",
+              "name": "link",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "description": "Allows styling to be applied to the icon that appears next to the hyperlink.",
+              "name": "targetIcon",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "appearance",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the component will be on lighter or darker backgrounds.",
+              "default": "'default'",
+              "fieldName": "appearance",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "fieldName": "href",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "fieldName": "rel",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "fieldName": "target",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "download",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "fieldName": "download",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "relative",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "fieldName": "relative",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "ondark",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "DEPRECATED - use `appearance` instead.",
+              "default": "false",
+              "fieldName": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "fieldName": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "referrerpolicy",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "fieldName": "referrerpolicy",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "fieldName": "variant",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroSideNavItem",
+          "declaration": {
+            "name": "AuroSideNavItem",
+            "module": "src/auro-sidenavitem.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-sidenavsection.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.",
+          "name": "AuroSideNavSection",
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenavsection\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderChevronIcons",
+              "description": "Renders the chevron icons.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateRandomLetters",
+              "parameters": [
+                {
+                  "name": "length",
+                  "description": "The number of characters to generate in the string.",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Generates a random string of letters.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toggle",
+              "description": "Toggles the visibility of the accordion content.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleButtonClick",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "The event object.",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Toggles the visibility of the accordion content when button gets clicked.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "iconTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "buttonNameHash",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "buttonTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is expanded.",
+              "default": "false",
+              "attribute": "expanded",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "alignRight",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the trigger content will align right.",
+              "attribute": "alignRight",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "emphasis",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, emphasis styles will be applied to the auro-accordions.",
+              "attribute": "emphasis",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "grouped",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Attribute will be set on accordion when it appears in an accordion group.",
+              "attribute": "grouped",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "chevron",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets chevron variant option. Possible values are: `none`, `right`.",
+              "attribute": "chevron",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets accordion variant option. Possible values are: `sm`, `lg`.",
+              "attribute": "variant",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is disabled and have reduced opacity.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "AuroAccordion",
+            "package": "@aurodesignsystem/auro-accordion/class"
+          },
+          "slots": [
+            {
+              "description": "Default slot for the accordion content.",
+              "name": "",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Defines the content of the trigger element.",
+              "name": "trigger",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Apply CSS to Accordion wrapper.",
+              "name": "accordion",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to trigger element.",
+              "name": "trigger",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to chevron icon.",
+              "name": "chevron",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to the accordion content.",
+              "name": "content",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "alignRight",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the trigger content will align right.",
+              "fieldName": "alignRight",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is expanded.",
+              "default": "false",
+              "fieldName": "expanded",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "emphasis",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, emphasis styles will be applied to the auro-accordions.",
+              "fieldName": "emphasis",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "grouped",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Attribute will be set on accordion when it appears in an accordion group.",
+              "fieldName": "grouped",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "chevron",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets chevron variant option. Possible values are: `none`, `right`.",
+              "fieldName": "chevron",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets accordion variant option. Possible values are: `sm`, `lg`.",
+              "fieldName": "variant",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is disabled and have reduced opacity.",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "toggleExpanded",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Notifies that the accordion has been expanded or closed.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroSideNavSection",
+          "declaration": {
+            "name": "AuroSideNavSection",
+            "module": "src/auro-sidenavsection.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroSideNav",
+          "declaration": {
+            "name": "AuroSideNav",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AuroSideNavItem",
+          "declaration": {
+            "name": "AuroSideNavItem",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AuroSideNavSection",
+          "declaration": {
+            "name": "AuroSideNavSection",
+            "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/registered.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/wca/auro-sidenav.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenav element provides users a way to create navigational interfaces on the left-hand\nside of a page to navigate to separate pages or different sections within the same page.",
+          "name": "AuroSideNavWCA",
+          "superclass": {
+            "name": "AuroSideNav",
+            "module": "/src/auro-sidenav.js"
+          },
+          "tagName": "auro-sidenav",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Defines what to use as the header of the sidenav.",
+              "name": "heading",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "description": "Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.",
+              "name": "",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "static",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "When applied the sidenav will expand to an open state and can't be collapsed.",
+              "fieldName": "static",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenav\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "description": "Used to update sidenavitem tiers on construction and",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleMouseDown",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "Mousedown event.",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Used to update selected menu when navigating in-page content.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyDown",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "Event object from the browser.",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Manage Enter keyboard events.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "initItems",
+              "description": "Initializes list of sidenavitems in the DOM. This must re-run whenever slotted items change.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "selectItem",
+              "parameters": [
+                {
+                  "name": "selectedItem",
+                  "description": "Item to be selected.",
+                  "type": {
+                    "text": "Object"
+                  }
+                }
+              ],
+              "description": "Updates items so that only specified item is selected.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "accordionTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "static",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "When applied the sidenav will expand to an open state and can't be collapsed.",
+              "attribute": "static",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroSideNav",
+                "module": "src/auro-sidenav.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "auro-sidenav",
+          "declaration": {
+            "name": "AuroSideNavWCA",
+            "module": "scripts/wca/auro-sidenav.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/wca/auro-sidenavitem.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenavitem element is the default child element of auro-sidenav.",
+          "name": "AuroSideNavItemWCA",
+          "superclass": {
+            "name": "AuroSideNavItem",
+            "module": "/src/auro-sidenavitem.js"
+          },
+          "tagName": "auro-sidenavitem",
+          "customElement": true,
+          "cssParts": [
+            {
+              "description": "Allows styling to be applied to the `a` element.",
+              "name": "link",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "description": "Allows styling to be applied to the icon that appears next to the hyperlink.",
+              "name": "targetIcon",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "appearance",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the component will be on lighter or darker backgrounds.",
+              "default": "'default'",
+              "fieldName": "appearance",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "fieldName": "href",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "rel",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "fieldName": "rel",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "fieldName": "target",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "download",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "fieldName": "download",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "relative",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "fieldName": "relative",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "ondark",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "DEPRECATED - use `appearance` instead.",
+              "default": "false",
+              "fieldName": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "fluid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "fieldName": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "referrerpolicy",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "fieldName": "referrerpolicy",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "fieldName": "variant",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenavitem\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "static": true,
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_createRefs",
+              "description": "Create usable refs to internal elements",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutDefault",
+              "description": "Renders the default layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLayoutCTA",
+              "description": "Renders the cta layout for the hyperlink.",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getMarkup",
+              "description": "Generates an object containing CSS classes based on the properties of the component.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "object"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "iconTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": "Defines ARIA roles; currently supports `button` for extended experiences.",
+              "name": "role",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "AuroHyperlink",
+                "module": "src/auro-hyperlink.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "safeUri",
+              "description": "Returns a safe URI based on the provided `href` and `relative` parameters.\nIf `href` is truthy, it generates a safe URL using the `safeUrl` function.\nOtherwise, it returns an empty string.",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "includesDomain",
+              "description": "Checks whether the provided URI (if available) includes the 'http' protocol.\nIf the URI is truthy, it examines whether it contains 'http'.\nOtherwise, it returns false.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "safeUrl",
+              "parameters": [
+                {
+                  "name": "href",
+                  "description": "The original URL.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "relative",
+                  "description": "Indicates whether the URL is relative.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Generates a safe URL based on the provided `href` and `relative` parameters.\nIf `href` is falsy, it returns `undefined`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateIconHtml",
+              "parameters": [
+                {
+                  "name": "svgContent",
+                  "description": "The SVG content to be embedded.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an HTML element containing an SVG icon based on the provided `svgContent`.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Element"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "targetIcon",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Generates an icon HTML element based on the target attribute.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "HTMLElement|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTabState",
+              "parameters": [
+                {
+                  "name": "tabIsActive",
+                  "description": "Indicates whether the tab is active.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Returns the state of a tab as a string.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getRelType",
+              "parameters": [
+                {
+                  "name": "target",
+                  "description": "The target attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "rel",
+                  "description": "The rel attribute of the anchor element.",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Gets the rel attribute value based on target and rel values.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string|undefined"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "ariaPressedState",
+              "parameters": [
+                {
+                  "name": "ariaPressed",
+                  "description": "The initial value of the ARIA pressed state.",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "description": "Sets the ARIA pressed state based on user interactions.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "appearance",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the component will be on lighter or darker backgrounds.",
+              "default": "'default'",
+              "attribute": "appearance",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "download",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the linked resource will be downloaded when the hyperlink is clicked.",
+              "default": "false",
+              "attribute": "download",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relative",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, the auto URL re-write feature will be disabled.",
+              "default": "false",
+              "attribute": "relative",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ondark",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "DEPRECATED - use `appearance` instead.",
+              "default": "false",
+              "attribute": "ondark",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets button variant option.",
+              "default": "\"primary\"",
+              "attribute": "variant",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "layout",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "shape",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultReferrerPolicy",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"strict-origin-when-cross-origin\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ariapressed",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "tabIsActive",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "\"false\"",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "href",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the URL of the linked page.",
+              "attribute": "href",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "rel",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the relationship between the current document and the linked document.",
+              "attribute": "rel",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines where to open the linked document.",
+              "attribute": "target",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the type of hyperlink; accepts `nav` or `cta`.",
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fluid",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true and `type=\"cta\"`, the hyperlink will have a fluid-width UI.",
+              "attribute": "fluid",
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "referrerpolicy",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If true, sets `strict-origin-when-cross-origin` to control the referrer information sent with requests.",
+              "attribute": "referrerpolicy",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "ComponentBase",
+                "module": "src/component-base.mjs"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "auro-sidenavitem",
+          "declaration": {
+            "name": "AuroSideNavItemWCA",
+            "module": "scripts/wca/auro-sidenavitem.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "scripts/wca/auro-sidenavsection.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.",
+          "name": "AuroSideNavSectionWCA",
+          "superclass": {
+            "name": "AuroSideNavSection",
+            "module": "/src/auro-sidenavsection.js"
+          },
+          "tagName": "auro-sidenavsection",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Default slot for the accordion content.",
+              "name": "",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Defines the content of the trigger element.",
+              "name": "trigger",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Apply CSS to Accordion wrapper.",
+              "name": "accordion",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to trigger element.",
+              "name": "trigger",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to chevron icon.",
+              "name": "chevron",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "description": "Apply CSS to the accordion content.",
+              "name": "content",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "alignRight",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the trigger content will align right.",
+              "fieldName": "alignRight",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is expanded.",
+              "default": "false",
+              "fieldName": "expanded",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "emphasis",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, emphasis styles will be applied to the auro-accordions.",
+              "fieldName": "emphasis",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "grouped",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Attribute will be set on accordion when it appears in an accordion group.",
+              "fieldName": "grouped",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "chevron",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets chevron variant option. Possible values are: `none`, `right`.",
+              "fieldName": "chevron",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "variant",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets accordion variant option. Possible values are: `sm`, `lg`.",
+              "fieldName": "variant",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is disabled and have reduced opacity.",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-sidenavsection\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderChevronIcons",
+              "description": "Renders the chevron icons.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "generateRandomLetters",
+              "parameters": [
+                {
+                  "name": "length",
+                  "description": "The number of characters to generate in the string.",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Generates a random string of letters.",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "toggle",
+              "description": "Toggles the visibility of the accordion content.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleButtonClick",
+              "parameters": [
+                {
+                  "name": "event",
+                  "description": "The event object.",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Toggles the visibility of the accordion content when button gets clicked.",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "iconTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "buttonNameHash",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "buttonTag",
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is expanded.",
+              "default": "false",
+              "attribute": "expanded",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "alignRight",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the trigger content will align right.",
+              "attribute": "alignRight",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "emphasis",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, emphasis styles will be applied to the auro-accordions.",
+              "attribute": "emphasis",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "grouped",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Attribute will be set on accordion when it appears in an accordion group.",
+              "attribute": "grouped",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "chevron",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets chevron variant option. Possible values are: `none`, `right`.",
+              "attribute": "chevron",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets accordion variant option. Possible values are: `sm`, `lg`.",
+              "attribute": "variant",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If set, the accordion is disabled and have reduced opacity.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "toggleExpanded",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Notifies that the accordion has been expanded or closed.",
+              "inheritedFrom": {
+                "name": "AuroAccordion",
+                "module": "src/auro-accordion.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "auro-sidenavsection",
+          "declaration": {
+            "name": "AuroSideNavSectionWCA",
+            "module": "scripts/wca/auro-sidenavsection.js"
+          }
+        }
+      ]
+    }
+  ]
+}

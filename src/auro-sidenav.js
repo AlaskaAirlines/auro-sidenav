@@ -5,7 +5,7 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
-import { AuroAccordion } from "@aurodesignsystem/auro-accordion/src/auro-accordion.js";
+import { AuroAccordion } from "@aurodesignsystem/auro-accordion/class";
 import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
 
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
@@ -48,6 +48,10 @@ export class AuroSideNav extends LitElement {
 
   static get properties() {
     return {
+
+      /**
+       * When applied the sidenav will expand to an open state and can't be collapsed.
+       */
       static: {
         type: Boolean,
         reflect: true,
