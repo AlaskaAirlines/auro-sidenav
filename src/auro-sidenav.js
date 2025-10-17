@@ -5,20 +5,17 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
+import { AuroAccordion } from "@aurodesignsystem/auro-accordion/class";
+import { AuroDependencyVersioning } from "@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs";
+
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If using litElement base class
 import { LitElement } from "lit";
-import { html } from 'lit/static-html.js';
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-
-import { AuroAccordion } from '@aurodesignsystem/auro-accordion/src/auro-accordion.js';
+import { html } from "lit/static-html.js";
 import accordionVersion from "./accordionVersion.js";
-
-import styleCss from "./styles/style-css.js";
-import colorCss from "./styles/color-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 /**
  * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
@@ -37,7 +34,11 @@ export class AuroSideNav extends LitElement {
     /**
      * @private
      */
-    this.accordionTag = versioning.generateTag('auro-accordion', accordionVersion, AuroAccordion);
+    this.accordionTag = versioning.generateTag(
+      "auro-accordion",
+      accordionVersion,
+      AuroAccordion,
+    );
 
     /**
      * @private
@@ -47,10 +48,14 @@ export class AuroSideNav extends LitElement {
 
   static get properties() {
     return {
+
+      /**
+       * When applied the sidenav will expand to an open state and can't be collapsed.
+       */
       static: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -74,11 +79,7 @@ export class AuroSideNav extends LitElement {
   }
 
   static get styles() {
-    return [
-      styleCss,
-      colorCss,
-      tokensCss
-    ];
+    return [styleCss, colorCss, tokensCss];
   }
 
   /**
@@ -86,7 +87,6 @@ export class AuroSideNav extends LitElement {
    * @private
    */
   handleSlotChange() {
-
     /**
      * Recursive helper function used to recurse through children and attach tiers to sidenavitems.
      * @param {*} node Describes node to apply slot changes to.
@@ -95,17 +95,17 @@ export class AuroSideNav extends LitElement {
      */
     function handleSlotChangeHelper(node, depth) {
       for (const element of node.children) {
-        if (element.tagName.includes('ITEM')) {
-          element.setAttribute('tier', depth);
+        if (element.tagName.includes("ITEM")) {
+          element.setAttribute("tier", depth);
           if (depth > 0) {
-            element.classList.add('body-default');
+            element.classList.add("body-default");
           } else {
-            element.classList.add('body-lg');
+            element.classList.add("body-lg");
           }
-          if (!element.hasAttribute('href')) {
-            element.setAttribute('role', 'button');
+          if (!element.hasAttribute("href")) {
+            element.setAttribute("role", "button");
           }
-        } else if (element.tagName.includes('SECTION')) {
+        } else if (element.tagName.includes("SECTION")) {
           element.setAttribute("chevron", true);
           element.setAttribute("fluid", true);
           handleSlotChangeHelper(element, depth + 1);
@@ -117,7 +117,6 @@ export class AuroSideNav extends LitElement {
     this.initItems();
   }
 
-
   /**
    * Used to update selected menu when navigating in-page content.
    * @param {Event} event - Mousedown event.
@@ -126,17 +125,16 @@ export class AuroSideNav extends LitElement {
   handleMouseDown(event) {
     const item = event.target;
 
-    if (item.tagName.toLowerCase() !== 'auro-sidenavitem') {
+    if (item.tagName.toLowerCase() !== "auro-sidenavitem") {
       return;
     }
 
-    if (item.hasAttribute('href')) {
+    if (item.hasAttribute("href")) {
       return;
     }
 
     this.selectItem(item);
   }
-
 
   /**
    * Manage Enter keyboard events.
@@ -149,10 +147,10 @@ export class AuroSideNav extends LitElement {
     // With Enter event, update selected item
     switch (event.key) {
       case "Enter":
-        if (item.tagName.toLowerCase() !== 'auro-sidenavitem') {
+        if (item.tagName.toLowerCase() !== "auro-sidenavitem") {
           return;
         }
-        if (item.hasAttribute('href')) {
+        if (item.hasAttribute("href")) {
           return;
         }
         this.selectItem(item);
@@ -167,7 +165,9 @@ export class AuroSideNav extends LitElement {
    * @private
    */
   initItems() {
-    this.items = Array.from(this.querySelectorAll('auro-sidenavitem, [auro-sidenavitem]'));
+    this.items = Array.from(
+      this.querySelectorAll("auro-sidenavitem, [auro-sidenavitem]"),
+    );
   }
 
   /**
@@ -177,18 +177,18 @@ export class AuroSideNav extends LitElement {
    */
   selectItem(selectedItem) {
     for (const item of this.items) {
-      item.removeAttribute('selected');
+      item.removeAttribute("selected");
     }
-    selectedItem.setAttribute('selected', "");
+    selectedItem.setAttribute("selected", "");
   }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-sidenav');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-sidenav");
 
     this.handleSlotChange();
-    this.addEventListener('keydown', this.handleKeyDown);
-    this.addEventListener('mousedown', this.handleMouseDown);
+    this.addEventListener("keydown", this.handleKeyDown);
+    this.addEventListener("mousedown", this.handleMouseDown);
   }
 
   /**
@@ -205,31 +205,47 @@ export class AuroSideNav extends LitElement {
     await this.updateComplete;
 
     if (!this.static) {
-      const sidenavMobileAccordion = this.shadowRoot.getElementById("accordion");
+      const sidenavMobileAccordion =
+        this.shadowRoot.getElementById("accordion");
       if (sidenavMobileAccordion) {
         // #accordionContent is the farthest down we can drill in the DOM to still catch all nested accordion events
-        const sidenavMobileAccordionContent = sidenavMobileAccordion.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
+        const sidenavMobileAccordionContent =
+          sidenavMobileAccordion.shadowRoot.querySelector(
+            "div.componentWrapper > #accordionContent",
+          );
 
         // Catch all nested accordion expansion events
         if (!sidenavMobileAccordionContent) {
           return;
         }
-        sidenavMobileAccordionContent.addEventListener("toggleExpanded", (event) => {
-          const nestedAccordionElement = event.target;
-          const nestedAccordionContent = nestedAccordionElement.shadowRoot.querySelector('div.componentWrapper > #accordionContent');
+        sidenavMobileAccordionContent.addEventListener(
+          "toggleExpanded",
+          (event) => {
+            const nestedAccordionElement = event.target;
+            const nestedAccordionContent =
+              nestedAccordionElement.shadowRoot.querySelector(
+                "div.componentWrapper > #accordionContent",
+              );
 
-          // Set height to auto to allow expansion/contraction
-          sidenavMobileAccordionContent.style.height = "auto";
+            // Set height to auto to allow expansion/contraction
+            sidenavMobileAccordionContent.style.height = "auto";
 
-          const onTransitionEnd = () => {
-            // Transition is over, now update sidenav "root" accordion with correct height
-            sidenavMobileAccordion.handleContentSlotChanges();
-            // Make listener clean itself up
-            nestedAccordionContent.removeEventListener("transitionend", onTransitionEnd);
-          };
+            const onTransitionEnd = () => {
+              // Transition is over, now update sidenav "root" accordion with correct height
+              sidenavMobileAccordion.handleContentSlotChanges();
+              // Make listener clean itself up
+              nestedAccordionContent.removeEventListener(
+                "transitionend",
+                onTransitionEnd,
+              );
+            };
 
-          nestedAccordionContent.addEventListener("transitionend", onTransitionEnd);
-        });
+            nestedAccordionContent.addEventListener(
+              "transitionend",
+              onTransitionEnd,
+            );
+          },
+        );
       }
     }
   }

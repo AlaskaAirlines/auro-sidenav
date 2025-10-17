@@ -3,12 +3,11 @@
 
 // ---------------------------------------------------------------------
 
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-import { AuroHyperlink } from '@aurodesignsystem/auro-hyperlink/src/auro-hyperlink.js';
-
-import styleItemsCss from './styles/style-items-css.js';
-import colorItemsCss from './styles/color-items-css.js';
-import tokensCss from './styles/tokens-css.js';
+import { AuroHyperlink } from "@aurodesignsystem/auro-hyperlink/class";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import colorItemsCss from "./styles/color-items.scss";
+import styleItemsCss from "./styles/style-items.scss";
+import tokensCss from "./styles/tokens.scss";
 
 /**
  * The auro-sidenavitem element can be used to create a link within the auro-sidenav.
@@ -16,15 +15,9 @@ import tokensCss from './styles/tokens-css.js';
 
 // build the component class
 export class AuroSideNavItem extends AuroHyperlink {
-
   static get styles() {
-    const styles = super.styles;
-    return [
-      ...styles,
-      styleItemsCss,
-      colorItemsCss,
-      tokensCss
-    ];
+    const styles = AuroHyperlink.styles;
+    return [...styles, styleItemsCss, colorItemsCss, tokensCss];
   }
 
   /**
