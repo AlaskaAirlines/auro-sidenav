@@ -24,6 +24,7 @@ register | `name` (string) - The name of element that you want to register to. |
 | --- | --- |
 heading | Defines what to use as the header of the sidenav.
 (default) | Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
+ariaLabel | Defines what to use as the aria-label of the sidenav.
 
 ---
 
@@ -138,6 +139,39 @@ The `heading` slot defines what to use as the header of the sidenav.
 ```html
 <auro-sidenav static>
   <span slot="heading">History of Alaska Airlines</span>
+  <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+  <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+</auro-sidenav>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### ariaLabel
+
+The `ariaLabel` slot defines what to use as the aria-label of the sidenav.
+
+**Note:** Do not use the `aria-label` attribute on the `auro-sidenav` element itself. This will be ignored in favor of the `ariaLabel` slot.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ariaLabelSlot.html) -->
+  <!-- The below content is automatically added from ../apiExamples/ariaLabelSlot.html -->
+  <auro-sidenav static>
+    <span slot="ariaLabel">History of Alaska Airlines</span>
+    <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
+    <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
+  </auro-sidenav>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ariaLabelSlot.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/ariaLabelSlot.html -->
+
+```html
+<auro-sidenav static>
+  <span slot="ariaLabel">History of Alaska Airlines</span>
   <auro-sidenavitem href="/content/about-us/history">Historical overview</auro-sidenavitem>
   <auro-sidenavitem href="/content/about-us/history/history-by-decade">History by decade</auro-sidenavitem>
   <auro-sidenavitem href="/content/about-us/history/pioneers">Alaska Airlines pioneers</auro-sidenavitem>
