@@ -24,6 +24,7 @@ register | `name` (string) - The name of element that you want to register to. |
 | --- | --- |
 heading | Defines what to use as the header of the sidenav.
 (default) | Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
+ariaLabel | Defines what to use as the aria-label of the sidenav.
 
 
 
