@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) 2026 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
@@ -10,10 +10,12 @@ import styleSectionsCss from "./styles/style-sections.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
- * The auro-sidenavsection element can be used to create an accordion of auro-sidenavitems within the auro-sidenav.
+ * The `auro-sidenavsection` element can be used to create an accordion of `auro-sidenavitems` within the `auro-sidenav`.
+ * @customElement auro-sidenavsection
+ *
+ * Force a list of inherited auro-accordion properties to be hidden from the generated documentation.
+ * @forcePrivate {'alignRight', 'chevron', 'disabled', 'emphasis', 'expanded', 'grouped', 'variant'}
  */
-
-// build the component class
 export class AuroSideNavSection extends AuroAccordion {
   static get styles() {
     const styles = AuroAccordion.styles;
@@ -22,7 +24,7 @@ export class AuroSideNavSection extends AuroAccordion {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-sidenavsection"] - The name of element that you want to register to.
+   * @param {string} [name="auro-sidenavsection"] - The name of the element that you want to register.
    *
    * @example
    * AuroSideNavSection.register("custom-sidenavsection") // this will register this element to <custom-sidenavsection/>
