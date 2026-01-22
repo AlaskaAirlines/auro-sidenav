@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) 2026 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
@@ -18,11 +18,13 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
- * The auro-sidenav element provides users a way to create navigational interfaces on the left-hand
+ * The `auro-sidenav` element provides users a way to create navigational interfaces on the left-hand
  * side of a page to navigate to separate pages or different sections within the same page.
+ * @customElement auro-sidenav
+ *
+ * @slot - Default slot of the sidenav. Please construct using `auro-sidenavitems` and `auro-sidenavsections`.
+ * @slot ariaLabel - Defines what to use as the `aria-label` of the sidenav.
  * @slot heading - Defines what to use as the header of the sidenav.
- * @slot - Default slot of the sidenav. Please construct using auro-sidenavitems and auro-sidenavsections.
- * @slot ariaLabel - Defines what to use as the aria-label of the sidenav.
  */
 
 // build the component class
@@ -51,7 +53,7 @@ export class AuroSideNav extends LitElement {
     return {
 
       /**
-       * When applied the sidenav will expand to an open state and can't be collapsed.
+       * When applied, the sidenav will expand to an open state and can't be collapsed.
        */
       static: {
         type: Boolean,
@@ -62,7 +64,7 @@ export class AuroSideNav extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-sidenav"] - The name of element that you want to register to.
+   * @param {string} [name="auro-sidenav"] - The name of the element that you want to register.
    *
    * @example
    * AuroSideNav.register("custom-sidenav") // this will register this element to <custom-sidenav/>
